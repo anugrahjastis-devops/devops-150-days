@@ -23,3 +23,15 @@
 8. `head -n` - View starting lines of a file
 9. `tail -n` - View latest/ending lines of a file
 10. `history` - View executed shell command history
+
+## 📌 Day 3: Process Handling, Storage & User Ownership
+1. `ps aux` - Display all running processes on the system
+2. `top` - Display real-time system resource & process usage
+3. `kill -9 <PID>` - Forcefully terminate a process by ID
+4. `pgrep <name>` - Search process ID by application name
+5. `df -h` - Display disk space usage in human-readable format
+6. `id` - Show user and group IDs for active user
+7. `useradd` - Create a new system user
+8. `passwd` - Update or set user password
+9. `chown` - Change file/directory ownership and group
+10. `groups` - List all groups a user belongs to
