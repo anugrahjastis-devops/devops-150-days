@@ -35,3 +35,15 @@
 8. `passwd` - Update or set user password
 9. `chown` - Change file/directory ownership and group
 10. `groups` - List all groups a user belongs to
+
+## 📌 Day 4: Networking Basics, Port Monitoring & Archiving
+1. `ping` - Test network connectivity and reachability to a host
+2. `curl -I` - Fetch HTTP response headers from a web server
+3. `wget` - Download files directly from the web via CLI
+4. `ss -tuln` - Display active listening TCP/UDP ports
+5. `nslookup` - Query DNS servers to resolve domain names to IPs
+6. `tar -czvf` - Create a compressed tarball archive (.tar.gz)
+7. `tar -xzvf` - Extract contents from a compressed tarball archive
+8. `zip -r` - Create a recursive zip archive of files/directories
+9. `unzip` - Extract files from a zip archive
+10. `scp` - Securely copy files between remote hosts over SSH
