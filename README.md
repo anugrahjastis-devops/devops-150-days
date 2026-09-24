@@ -47,3 +47,15 @@
 8. `zip -r` - Create a recursive zip archive of files/directories
 9. `unzip` - Extract files from a zip archive
 10. `scp` - Securely copy files between remote hosts over SSH
+
+## 📌 Day 5: Shell Scripting Basics & Automation Fundamentals
+1. `#!/bin/bash` - Shebang line specifying the Bash interpreter
+2. `chmod +x` - Grant execution permissions to a shell script
+3. `./script.sh` - Execute a local shell script file
+4. `Variables` - Store dynamic data using `KEY=VALUE` syntax
+5. `echo` - Output text or variable values to the terminal
+6. `read` - Accept dynamic input from the user during script execution
+7. `if/else` - Execute conditional logic blocks in scripts
+8. `for/while loops` - Iterate over lists or conditions to automate tasks
+9. `$1, $2` - Access positional arguments passed to scripts
+10. `$(command)` - Use command substitution to capture CLI output in variables
