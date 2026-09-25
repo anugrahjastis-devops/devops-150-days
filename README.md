@@ -59,3 +59,16 @@
 8. `for/while loops` - Iterate over lists or conditions to automate tasks
 9. `$1, $2` - Access positional arguments passed to scripts
 10. `$(command)` - Use command substitution to capture CLI output in variables
+
+### 📌 Day 6: Advanced Text Processing & Log Analysis
+
+1. `grep "ERROR" app.log` - Search specific pattern/word in log file
+2. `grep -i "error" app.log` - Case-insensitive text search
+3. `grep -n "500" app.log` - Search text and show line numbers
+4. `grep -c "FAIL" app.log` - Count total occurrences of matching pattern
+5. `awk '{print $1}' app.log` - Extract specific column (e.g., Date or IP)
+6. `awk '$3 == "ERROR"' app.log` - Conditional filtering based on field values
+7. `sed 's/http/https/g' config.txt` - Stream replace text (output preview)
+8. `sed -i 's/old/new/g' file.txt` - Replace text directly inside file permanently
+9. `cat app.log | grep "ERROR" | wc -l` - Pipeline commands to count total errors
+10. `sort | uniq -c` - Sort and count unique log entries
