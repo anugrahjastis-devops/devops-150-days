@@ -72,3 +72,16 @@
 8. `sed -i 's/old/new/g' file.txt` - Replace text directly inside file permanently
 9. `cat app.log | grep "ERROR" | wc -l` - Pipeline commands to count total errors
 10. `sort | uniq -c` - Sort and count unique log entries
+
+### 📌 Day 7: System Validation & Benchmarking
+
+1. `uname -a` - Check kernel version, system architecture, and OS release details[cite: 16]
+2. `cat /etc/os-release` - Inspect Linux distribution name, version ID, and release metadata[cite: 16]
+3. `pwd` - Print current working directory path[cite: 16]
+4. `whoami` - Display current active logged-in user[cite: 16]
+5. `uptime` - View system running time, logged-in users, and CPU load averages[cite: 16]
+6. `free -h` - Check memory/RAM and swap space utilization in human-readable format[cite: 16]
+7. `df -h` - Check disk space usage across all mounted filesystems[cite: 16]
+8. `ip addr` - Display active network interfaces, IP addresses, and MAC details[cite: 15]
+9. `env | head -n 5` - View environment variables set in current shell session[cite: 15]
+10. `date` - Display current system date, time, and timezone[cite: 15]
