@@ -85,3 +85,10 @@
 8. `ip addr` - Display active network interfaces, IP addresses, and MAC details[cite: 15]
 9. `env | head -n 5` - View environment variables set in current shell session[cite: 15]
 10. `date` - Display current system date, time, and timezone[cite: 15]
+
+### 📌 Day 8: Advanced File Permissions, Ownership & Access Control
+
+1. `ls -l` - Inspect detailed file permissions, links, owner, group, and timestamps
+2. `chmod 755` - Assign read, write, and execute permissions to owner, and read/execute to group/others
+3. `chown root:root` - Change file ownership and group ownership to root for system security
+4. `sudo` - Execute administrative commands with elevated security privileges
