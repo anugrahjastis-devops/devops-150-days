@@ -110,3 +110,12 @@
 5. sudo systemctl reload <service> - Refreshes service configuration files without interrupting active client connections (Zero-Downtime Reload)
 6. sudo systemctl enable <service> - Links a service to system boot so it automatically starts on server reboot
 7. sudo systemctl disable <service> - Removes auto-boot symlinks to prevent unused services from starting automatically
+
+📌 Day 11: Shell Scripting Basics & Bash Automation
+
+1. Shebang (#!/bin/bash) - Defines the script interpreter for OS execution
+2. Variables - Stores dynamic system data and user variables for automated workflows
+3. Command Substitution $(command) - Captures command output directly into variables
+4. chmod +x <script.sh> - Grants executable permissions to bash scripts
+5. ./script.sh - Executes the script in the active shell context
+6. Hands-on Project: Built automated system health reporting script (sys_info.sh) tracking date, user, uptime, and disk usage
