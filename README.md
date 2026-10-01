@@ -119,3 +119,11 @@
 4. chmod +x <script.sh> - Grants executable permissions to bash scripts
 5. ./script.sh - Executes the script in the active shell context
 6. Hands-on Project: Built automated system health reporting script (sys_info.sh) tracking date, user, uptime, and disk usage
+
+📌 Day 12: Shell Scripting – Variables, User Input & Conditional Logic
+
+1. User Input (read) - Captures user input interactively during script runtime
+2. Conditional Logic (if-else) - Implements decision-making workflows in shell scripts
+3. Directory Test Operator (-d) - Checks if a specified directory path exists before processing
+4. File Count & Inspection - Combines ls, wc, and pipeline execution to dynamically analyze files
+5. Hands-on Project: Developed interactive directory inspection tool (check_dir.sh) to validate folder existence and report total file counts
