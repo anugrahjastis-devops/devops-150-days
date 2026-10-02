@@ -127,3 +127,11 @@
 3. Directory Test Operator (-d) - Checks if a specified directory path exists before processing
 4. File Count & Inspection - Combines ls, wc, and pipeline execution to dynamically analyze files
 5. Hands-on Project: Developed interactive directory inspection tool (check_dir.sh) to validate folder existence and report total file counts
+
+📌 Day 13: Shell Scripting – Loops & Automated Monitoring Tasks
+
+1. For Loops - Used for iterating over defined lists (log files, directories, server lists)
+2. While Loops - Executes tasks continuously based on dynamic conditional checks
+3. Execution Control (sleep) - Introduces timed delays between loop iterations to optimize CPU usage
+4. Loop Counters - Increments numeric tracking variables inside while execution blocks
+5. Hands-on Project: Developed service_monitor.sh script combining for-loop log processing and while-loop active monitoring
