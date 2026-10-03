@@ -135,3 +135,11 @@
 3. Execution Control (sleep) - Introduces timed delays between loop iterations to optimize CPU usage
 4. Loop Counters - Increments numeric tracking variables inside while execution blocks
 5. Hands-on Project: Developed service_monitor.sh script combining for-loop log processing and while-loop active monitoring
+
+📌 Day 14: Advanced Shell Scripting – Functions & Error Handling
+
+1. Functions (my_func() {}) - Modularized script logic into reusable functional blocks
+2. Parameters ($1, $2) - Passed dynamic arguments directly into execution functions
+3. Exit Status ($?) - Inspected command execution health codes (0 for Success, non-zero for Errors)
+4. Custom Error Trapping - Implemented explicit script terminations (exit 1) upon critical resource failures
+5. Hands-on Project: Built a production-grade validation script (production_checker.sh) featuring timestamped logging and fail-safe file assertion checks
