@@ -143,3 +143,12 @@
 3. Exit Status ($?) - Inspected command execution health codes (0 for Success, non-zero for Errors)
 4. Custom Error Trapping - Implemented explicit script terminations (exit 1) upon critical resource failures
 5. Hands-on Project: Built a production-grade validation script (production_checker.sh) featuring timestamped logging and fail-safe file assertion checks
+
+
+### ?? Day 15: Production Scripting & Monitoring Sentinel
+1. Production Sentinel Script - Built devops_server_sentinel.sh for active automated health monitoring.
+2. Real-time Status Checks - Implemented process, memory, and disk assertion checks.
+
+### ?? Day 16: Version Control & Git Management
+1. Advanced Git Operations - Stash management, rebase resolution, and branch synchronization.
+2. Multi-Environment Sync - Resolved divergent branches and configured secure SSH remote tracking.
