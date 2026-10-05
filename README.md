@@ -152,3 +152,14 @@
 ### ?? Day 16: Version Control & Git Management
 1. Advanced Git Operations - Stash management, rebase resolution, and branch synchronization.
 2. Multi-Environment Sync - Resolved divergent branches and configured secure SSH remote tracking.
+
+### 📌 Day 15: Production Scripting & Monitoring Sentinel
+1. **Server Sentinel Script** - Developed devops_server_sentinel.sh for active system health analysis.
+2. **System Health Metrics** - Automated CPU usage, memory utilization, and disk space tracking.
+3. **Threshold Alerts** - Configured custom assertion rules and alert mechanisms for critical resource limits.
+4. **Hands-on Project:** Built a production-ready server sentinel script to continuously monitor system resources and write timestamped logs.
+
+### 📌 Day 16: Version Control & Git Management
+1. **Repository Synchronization** - Mastered tracking remote branches, fetching updates, and resolving upstream conflicts.
+2. **Advanced Git Workflows** - Applied stash management, soft resets, and interactive rebase commands.
+3. **Hands-on Project:** Successfully unified divergent local commits and synchronized all Day 11-16 DevOps scripts with the main GitHub branch.
