@@ -163,3 +163,9 @@
 1. **Repository Synchronization** - Mastered tracking remote branches, fetching updates, and resolving upstream conflicts.
 2. **Advanced Git Workflows** - Applied stash management, soft resets, and interactive rebase commands.
 3. **Hands-on Project:** Successfully unified divergent local commits and synchronized all Day 11-16 DevOps scripts with the main GitHub branch.
+
+### 📌 Day 17: Continuous Integration & GitHub Actions Workflow
+1. **CI/CD Pipeline Basics** - Configured automated workflow triggers on repository push and pull requests.
+2. **YAML Pipeline Syntax** - Structured jobs, runners (ubuntu-latest), and step-by-step checkout actions.
+3. **Automated Sanity Execution** - Configured automated execution permissions and script validation checks.
+4. **Hands-on Project:** Built and deployed `.github/workflows/day17-ci.yml` to execute automated CI builds on GitHub.
