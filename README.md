@@ -169,3 +169,9 @@
 2. **YAML Pipeline Syntax** - Structured jobs, runners (ubuntu-latest), and step-by-step checkout actions.
 3. **Automated Sanity Execution** - Configured automated execution permissions and script validation checks.
 4. **Hands-on Project:** Built and deployed `.github/workflows/day17-ci.yml` to execute automated CI builds on GitHub.
+
+### 📌 Day 18: GitHub Actions Matrix Builds & Dynamic Environment Variables
+1. **Matrix Strategy Testing** - Configured parallel execution across multiple OS runners (`ubuntu-latest`, `ubuntu-22.04`) to validate cross-platform script stability.
+2. **Dynamic Environment Configuration** - Integrated global pipeline `env` block to manage dynamic build metadata like `PROJECT_NAME` and `ENV_STAGE`.
+3. **Multi-Environment Pipeline Validation** - Executed automated script existence and directory structure validation inside `.github/workflows/day18-matrix-ci.yml`.
+4. **Hands-on Project:** Successfully deployed multi-runner matrix CI workflow and verified parallel job execution under GitHub Actions.
