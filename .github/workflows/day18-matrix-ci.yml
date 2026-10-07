@@ -1,0 +1,32 @@
+name: Day 18 - Matrix Build & Environment CI
+
+on:
+  push:
+    branches: [ "main" ]
+
+env:
+  PROJECT_NAME: "DevOps 150 Days Challenge"
+  ENV_STAGE: "Testing & Validation"
+
+jobs:
+  matrix-test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, ubuntu-22.04]
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Print Environment Details
+      run: |
+        echo "Running tests for: $PROJECT_NAME"
+        echo "Current Stage: $ENV_STAGE"
+        echo "Operating System: ${{ matrix.os }}"
+
+    - name: Validate Shell Scripts
+      run: |
+        echo "Validating repository scripts..."
+        ls -la Day-15/ Day-16/ 2>/dev/null || true
+        echo "Matrix Build Completed Successfully!"
