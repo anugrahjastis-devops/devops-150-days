@@ -175,3 +175,9 @@
 2. **Dynamic Environment Configuration** - Integrated global pipeline `env` block to manage dynamic build metadata like `PROJECT_NAME` and `ENV_STAGE`.
 3. **Multi-Environment Pipeline Validation** - Executed automated script existence and directory structure validation inside `.github/workflows/day18-matrix-ci.yml`.
 4. **Hands-on Project:** Successfully deployed multi-runner matrix CI workflow and verified parallel job execution under GitHub Actions.
+
+### 📌 Day 19: GitHub Actions Secrets & Artifacts Management
+1. **GitHub Secrets Integration** - Secured sensitive credentials by binding repository-level secret `DB_PASSWORD` using dynamic environment mapping (`${{ secrets.DB_PASSWORD }}`).
+2. **Automated Log Masking** - Verified built-in GitHub Actions log masking security mechanisms where sensitive output values are automatically obfuscated as `***` in execution logs.
+3. **Artifact Upload Pipeline** - Automated audit log generation and configured long-term file retention using `actions/upload-artifact@v3` to preserve build outputs (`day19-audit-logs.zip`).
+4. **Hands-on Project:** Successfully built and executed `.github/workflows/day19-secrets-artifacts.yml` to secure credentials and store pipeline audit logs.
