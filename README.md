@@ -181,3 +181,9 @@
 2. **Automated Log Masking** - Verified built-in GitHub Actions log masking security mechanisms where sensitive output values are automatically obfuscated as `***` in execution logs.
 3. **Artifact Upload Pipeline** - Automated audit log generation and configured long-term file retention using `actions/upload-artifact@v3` to preserve build outputs (`day19-audit-logs.zip`).
 4. **Hands-on Project:** Successfully built and executed `.github/workflows/day19-secrets-artifacts.yml` to secure credentials and store pipeline audit logs.
+
+### 📌 Day 20: Advanced Workflow Triggers, Event Filters & Manual Dispatch
+1. **Multi-Event Triggering** - Configured workflow activation across multiple developer lifecycle events including `push`, `pull_request`, and manual execution via `workflow_dispatch`.
+2. **Path Filtering Strategy** - Optimized CI runner usage by enforcing `paths` filters to execute jobs only when specific workflow or project directories (`Day-15/**`) undergo changes.
+3. **Manual Trigger Customization** - Built interactive `workflow_dispatch` inputs enabling developers to pass dynamic deployment target parameters (`staging` vs `production`) directly from the GitHub UI.
+4. **Hands-on Project:** Successfully deployed `.github/workflows/day20-triggers.yml` to minimize unnecessary build triggers and enforce production-grade CI event controls.
