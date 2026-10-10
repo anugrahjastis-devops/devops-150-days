@@ -187,3 +187,10 @@
 2. **Path Filtering Strategy** - Optimized CI runner usage by enforcing `paths` filters to execute jobs only when specific workflow or project directories (`Day-15/**`) undergo changes.
 3. **Manual Trigger Customization** - Built interactive `workflow_dispatch` inputs enabling developers to pass dynamic deployment target parameters (`staging` vs `production`) directly from the GitHub UI.
 4. **Hands-on Project:** Successfully deployed `.github/workflows/day20-triggers.yml` to minimize unnecessary build triggers and enforce production-grade CI event controls.
+
+### 📌 Day 21: Automated Testing, Code Quality (Linting) & Job Dependencies
+
+1. **Automated Code Quality & Linting (`shellcheck`)** - Integrated static analysis to automatically detect syntax errors, potential bugs, and formatting issues in shell scripts prior to testing.
+2. **Sequential Multi-Job Pipelines (`needs`)** - Implemented job dependency chains to ensure strict execution order (`Linting` ➔ `Testing` ➔ `Build/Deploy`).
+3. **Fail-Fast Safety Controls** - Configured automated pipeline stops on lint or unit test failure, preventing broken code from advancing to production stages.
+4. **Hands-on Project:** Successfully created and validated `.github/workflows/day21-testing-linting.yml` with a 3-stage dependency graph.
