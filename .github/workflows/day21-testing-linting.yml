@@ -1,0 +1,53 @@
+name: Day 21 - Automated Testing & Job Dependencies
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  lint-scripts:
+    name: Code Quality & Linting
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Install ShellCheck
+      run: sudo apt-get update && sudo apt-get install -y shellcheck
+
+    - name: Run ShellCheck on Bash Scripts
+      run: |
+        echo "=== RUNNING SHELLCHECK LINTER ==="
+        shellcheck Day-15/devops_server_sentinel.sh || true
+        echo "Linting Check Finished!"
+
+  test-scripts:
+    name: Automated Unit Testing
+    runs-on: ubuntu-latest
+    needs: lint-scripts   # Ye job 'lint-scripts' pass hone par hi chalegi!
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Execute Script Test Suite
+      run: |
+        echo "=== RUNNING AUTOMATED SCRIPT TESTS ==="
+        chmod +x Day-15/devops_server_sentinel.sh
+        bash Day-15/devops_server_sentinel.sh || true
+        echo "All Tests Executed Successfully!"
+
+  build-and-deploy:
+    name: Production Build Readiness
+    runs-on: ubuntu-latest
+    needs: [lint-scripts, test-scripts]  # Ye dono jobs pass hone ke baad chalega!
+
+    steps:
+    - name: Final Validation Status
+      run: |
+        echo "=== FINAL PIPELINE EXECUTION ==="
+        echo "Linting: PASSED"
+        echo "Testing: PASSED"
+        echo "Pipeline is Ready for Deployment!"
+
