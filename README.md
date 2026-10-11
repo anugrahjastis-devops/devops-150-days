@@ -194,3 +194,10 @@
 2. **Sequential Multi-Job Pipelines (`needs`)** - Implemented job dependency chains to ensure strict execution order (`Linting` ➔ `Testing` ➔ `Build/Deploy`).
 3. **Fail-Fast Safety Controls** - Configured automated pipeline stops on lint or unit test failure, preventing broken code from advancing to production stages.
 4. **Hands-on Project:** Successfully created and validated `.github/workflows/day21-testing-linting.yml` with a 3-stage dependency graph.
+
+### 📌 Day 22: Reusable Workflows (`workflow_call`) & Modular Pipeline Architecture
+
+1. **Centralized Workflow Reusability (`workflow_call`)** - Created modular CI/CD components to eliminate code duplication across multiple environments (DRY Principle).
+2. **Parameterization with Custom Inputs** - Implemented dynamic `inputs` passing (`target-environment`) from parent pipelines to child reusable workflows.
+3. **Sequential Pipeline Chain** - Configured parent workflow to execute staging audits prior to triggering production environment audits.
+4. **Hands-on Project:** Built and verified `.github/workflows/reusable-lint-check.yml` (Child) and `.github/workflows/day22-caller-pipeline.yml` (Parent).
