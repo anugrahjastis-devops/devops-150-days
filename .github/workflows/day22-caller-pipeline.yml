@@ -1,0 +1,19 @@
+name: Day 22 - Parent Pipeline using Reusable Workflow
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  run-staging-check:
+    name: Staging Quality Audit
+    uses: ./.github/workflows/reusable-lint-check.yml
+    with:
+      target-environment: 'staging'
+
+  run-production-check:
+    name: Production Quality Audit
+    needs: run-staging-check
+    uses: ./.github/workflows/reusable-lint-check.yml
+    with:
+      target-environment: 'production'

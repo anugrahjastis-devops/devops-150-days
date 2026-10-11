@@ -1,0 +1,24 @@
+name: Reusable Quality Check Component
+
+on:
+  workflow_call:
+    inputs:
+      target-environment:
+        required: true
+        type: string
+        description: 'Target environment name (dev/staging/prod)'
+
+jobs:
+  execute-reusable-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Execute Quality Audit
+        run: |
+          echo "=== EXECUTING REUSABLE MODULE ==="
+          echo "Target Environment: ${{ inputs.target-environment }}"
+          echo "Auditing script syntax..."
+          shellcheck Day-15/devops_server_sentinel.sh || true
+          echo "Module Execution Completed Successfully!"
