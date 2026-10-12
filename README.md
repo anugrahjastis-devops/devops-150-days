@@ -201,3 +201,10 @@
 2. **Parameterization with Custom Inputs** - Implemented dynamic `inputs` passing (`target-environment`) from parent pipelines to child reusable workflows.
 3. **Sequential Pipeline Chain** - Configured parent workflow to execute staging audits prior to triggering production environment audits.
 4. **Hands-on Project:** Built and verified `.github/workflows/reusable-lint-check.yml` (Child) and `.github/workflows/day22-caller-pipeline.yml` (Parent).
+
+### 📌 Day 23: Self-Hosted Runners Concept & Environment Inspection
+
+1. **Runner Infrastructure Inspection** - Audited underlying execution environments (Kernel, OS specs, disk, and memory limits) using automated CI/CD steps.
+2. **Infrastructure Observability** - Added real-time diagnostics (`df -h`, `free -m`, `uname -a`) to monitor runner health before running build/deployment tasks.
+3. **Local Script Execution** - Executed custom bash diagnostic scripts (`devops_server_sentinel.sh`) directly on the runner host environment.
+4. **Hands-on Project:** Configured and verified `.github/workflows/day23-system-audit.yml` to audit runner hardware and execute local system checks.
