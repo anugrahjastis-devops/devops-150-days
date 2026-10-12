@@ -1,0 +1,22 @@
+name: Day 23 - Self-Hosted Runner Live Execution
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  run-on-my-laptop:
+    name: Local Machine Pipeline
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Execute Local Command
+        run: |
+          echo "=============================================="
+          echo "HELL0 FROM LOCAL SELF-HOSTED RUNNER!"
+          echo "Current Directory: $(pwd)"
+          echo "=============================================="
