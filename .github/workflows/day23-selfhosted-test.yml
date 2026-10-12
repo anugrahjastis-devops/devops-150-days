@@ -12,11 +12,11 @@ jobs:
 
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Execute Local Command
         run: |
           echo "=============================================="
-          echo "HELL0 FROM LOCAL SELF-HOSTED RUNNER!"
+          echo "HELLO FROM LOCAL SELF-HOSTED RUNNER!"
           echo "Current Directory: $(pwd)"
           echo "=============================================="
