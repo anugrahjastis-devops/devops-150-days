@@ -1,0 +1,35 @@
+name: Day 23 - System Audit & Runner Inspection
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  inspect-runner-environment:
+    name: Runner Hardware & Environment Audit
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Audit Operating System & Kernel
+        run: |
+          echo "=== OPERATING SYSTEM AUDIT ==="
+          uname -a
+          cat /etc/os-release | grep -E "PRETTY_NAME|VERSION"
+
+      - name: Audit Disk Space & Memory
+        run: |
+          echo "=== DISK & MEMORY AUDIT ==="
+          df -h /
+          free -m
+
+      - name: Execute Server Sentinel Script
+        run: |
+          echo "=== RUNNING LOCAL SCRIPT AUDIT ==="
+          chmod +x Day-15/devops_server_sentinel.sh
+          echo "Executing sentinel check..."
+          bash Day-15/devops_server_sentinel.sh || true
+          echo "Runner execution completed successfully!"
