@@ -208,3 +208,40 @@
 2. **Infrastructure Observability** - Added real-time diagnostics (`df -h`, `free -m`, `uname -a`) to monitor runner health before running build/deployment tasks.
 3. **Local Script Execution** - Executed custom bash diagnostic scripts (`devops_server_sentinel.sh`) directly on the runner host environment.
 4. **Hands-on Project:** Configured and verified `.github/workflows/day23-system-audit.yml` to audit runner hardware and execute local system checks.
+
+# Day 24: Containerized CI/CD Pipelines in GitHub Actions
+
+## 📌 Overview
+Day 24 focuses on running CI/CD jobs inside isolated Docker containers rather than directly on the host machine. This ensures consistent execution environments, prevents dependency pollution, and enables reproducible builds.
+
+## 🛠️ Key Concepts & Architecture
+* **Containerized Workflows:** Defining the `container:` key in GitHub Actions workflow to run steps inside a pre-built Docker image (`ubuntu:22.04`).
+* **Environment Isolation:** Isolating runtime dependencies from the host self-hosted runner.
+* **Docker Daemon Integration:** Leveraging host Docker capabilities for container spin-up and teardown.
+
+## 🚀 Workflow File (`.github/workflows/day24-containerized-ci.yml`)
+```yaml
+name: Day 24 - Containerized CI Pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  docker-job:
+    name: Run Inside Docker Container
+    runs-on: self-hosted
+    container:
+      image: ubuntu:22.04
+
+    steps:
+      - name: Check Container Environment
+        run: |
+          echo "=============================================="
+          echo "🚀 RUNNING INSIDE A DOCKER CONTAINER! 🚀"
+          echo "Container OS Release:"
+          cat /etc/os-release
+          echo "Current User: $(whoami)"
+          echo "Container Hostname: $(hostname)"
+          echo "=============================================="
