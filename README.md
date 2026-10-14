@@ -245,3 +245,16 @@ jobs:
           echo "Current User: $(whoami)"
           echo "Container Hostname: $(hostname)"
           echo "=============================================="
+
+# Day 25: GitHub Actions Secret Management & Environment Variables
+
+## 📌 Overview
+Day 25 focuses on securing sensitive credentials (API keys, tokens, passwords) using GitHub Secrets and managing configuration parameters across different scopes using Environment Variables (`env`).
+
+## 🛠️ Key Concepts
+* **GitHub Secrets:** Encrypted storage for sensitive keys (`${{ secrets.MY_API_KEY }}`), which are automatically masked in workflow logs.
+* **Environment Scopes:** Defining variables at the workflow-level (`env`) and job-level (`env`) for modular configuration.
+
+## 🚀 Workflow File (`.github/workflows/day25-secrets-env.yml`)
+* Implemented workflow-level and job-level environment variables.
+* Integrated secure secret injection tested via self-hosted runner.
