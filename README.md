@@ -258,3 +258,17 @@ Day 25 focuses on securing sensitive credentials (API keys, tokens, passwords) u
 ## 🚀 Workflow File (`.github/workflows/day25-secrets-env.yml`)
 * Implemented workflow-level and job-level environment variables.
 * Integrated secure secret injection tested via self-hosted runner.
+
+# Day 26: Automated Docker Image Build and Push Pipeline
+
+## 📌 Overview
+Day 26 integrates Docker image building and registry publishing directly into the GitHub Actions CI/CD pipeline using encrypted credentials and self-hosted runners.
+
+## 🛠️ Key Concepts
+* **Docker Login Action:** Secure authentication using repository secrets (`DOCKER_USERNAME` and `DOCKER_PASSWORD`).
+* **Docker Buildx Integration:** Enabled Buildx capabilities on local self-hosted runner for container synthesis.
+* **Automated Registry Push:** Automatically compiled root `Dockerfile` and published image tags to Docker Hub.
+
+## 🚀 Workflow File (`.github/workflows/day26-docker-build-push.yml`)
+* Authenticates with Docker Hub via secure token injection.
+* Compiles root `Dockerfile` context and pushes the image to remote storage (`anugrahjastis/devops-150-days:day26-latest`).
