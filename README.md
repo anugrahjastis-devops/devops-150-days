@@ -272,3 +272,16 @@ Day 26 integrates Docker image building and registry publishing directly into th
 ## 🚀 Workflow File (`.github/workflows/day26-docker-build-push.yml`)
 * Authenticates with Docker Hub via secure token injection.
 * Compiles root `Dockerfile` context and pushes the image to remote storage (`anugrahjastis/devops-150-days:day26-latest`).
+
+# Day 27: Multi-Container Orchestration with Docker Compose
+
+## 📌 Overview
+Day 27 explores multi-tier application architectures using Docker Compose, enabling the definition and execution of multiple Docker containers simultaneously within CI/CD pipelines.
+
+## 🛠️ Key Concepts
+* **Docker Compose Services:** Managing interdependent services (Web app & Redis DB) using a single YAML blueprint.
+* **Declarative Environments:** Defining container ports, restart policies, and commands cleanly.
+* **Pipeline Orchestration:** Validating multi-container startup and teardown cycles via GitHub Actions self-hosted runners.
+
+## 🚀 Workflow File (`.github/workflows/day27-compose-ci.yml`)
+* Automates service spin-up (`docker compose up -d`) and cleanup (`docker compose down`) inside the runner environment.
