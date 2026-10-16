@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  web-app:
+    image: ubuntu:22.04
+    container_name: devops-web-container
+    restart: always
+    command: bash -c "apt-get update && apt-get install -y curl && echo 'Web Service is Running!' && sleep infinity"
+    ports:
+      - "8080:80"
+
+  database:
+    image: redis:alpine
+    container_name: devops-redis-db
+    restart: always
+    ports:
+      - "6379:6379"
