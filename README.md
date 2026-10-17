@@ -285,3 +285,16 @@ Day 27 explores multi-tier application architectures using Docker Compose, enabl
 
 ## 🚀 Workflow File (`.github/workflows/day27-compose-ci.yml`)
 * Automates service spin-up (`docker compose up -d`) and cleanup (`docker compose down`) inside the runner environment.
+
+# Day 28: Docker Volumes & Persistent Storage in CI/CD
+
+## 📌 Overview
+Day 28 covers persistent data storage mechanisms in Dockerized environments using Named Volumes and Docker Compose, ensuring stateful data survives container lifecycles.
+
+## 🛠️ Key Concepts
+* **Named Volumes:** Managed local storage (`app-data`, `redis-data`) decoupled from container lifecycles.
+* **Stateful Containers:** Storing application logs and database records persistently.
+* **Automated Persistence Verification:** Executing volume validation scripts inside GitHub Actions workflows.
+
+## 🚀 Workflow File (`.github/workflows/day28-volumes-ci.yml`)
+* Validates volume creation (`docker volume ls`) and inspects mounted data retention.
