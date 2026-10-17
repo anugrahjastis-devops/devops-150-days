@@ -1,13 +1,13 @@
 version: '3.8'
 
 services:
-  web-app:
+  app-server:
     image: ubuntu:22.04
-    container_name: devops-web-container
+    container_name: devops-app-container
     restart: always
-    command: bash -c "apt-get update && apt-get install -y curl && echo 'Web Service is Running!' && sleep infinity"
-    ports:
-      - "8080:80"
+    command: bash -c "echo 'Persistent Log Data' >> /app/data/app.log && sleep infinity"
+    volumes:
+      - app-data:/app/data
 
   database:
     image: redis:alpine
@@ -15,3 +15,11 @@ services:
     restart: always
     ports:
       - "6379:6379"
+    volumes:
+      - redis-data:/data
+
+volumes:
+  app-data:
+    driver: local
+  redis-data:
+    driver: local
