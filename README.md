@@ -298,3 +298,9 @@ Day 28 covers persistent data storage mechanisms in Dockerized environments usin
 
 ## 🚀 Workflow File (`.github/workflows/day28-volumes-ci.yml`)
 * Validates volume creation (`docker volume ls`) and inspects mounted data retention.
+
+📌 Day 29: Docker Networking & Custom Bridge Networks
+1. docker network ls - List all available Docker networks (bridge, host, none)
+2. docker network create --driver bridge my-custom-network - Create a custom bridge network for inter-container communication
+3. docker run --network my-custom-network - Run containers connected to the custom network
+4. docker exec -it container1 ping container2 - Test communication using container names via Docker's embedded DNS resolution
