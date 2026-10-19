@@ -304,3 +304,8 @@ Day 28 covers persistent data storage mechanisms in Dockerized environments usin
 2. docker network create --driver bridge my-custom-network - Create a custom bridge network for inter-container communication
 3. docker run --network my-custom-network - Run containers connected to the custom network
 4. docker exec -it container1 ping container2 - Test communication using container names via Docker's embedded DNS resolution
+
+📌 Day 30: Docker Storage Deep Dive
+1. docker volume create my-app-data - Create Docker managed volume for data persistence
+2. docker run -v my-app-data:/app/data - Mount named volume to ensure data survives container deletion
+3. docker run -v $(pwd):/usr/share/nginx/html - Use Bind Mount for real-time development file sharing
