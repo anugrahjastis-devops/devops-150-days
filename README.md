@@ -309,3 +309,8 @@ Day 28 covers persistent data storage mechanisms in Dockerized environments usin
 1. docker volume create my-app-data - Create Docker managed volume for data persistence
 2. docker run -v my-app-data:/app/data - Mount named volume to ensure data survives container deletion
 3. docker run -v $(pwd):/usr/share/nginx/html - Use Bind Mount for real-time development file sharing
+
+📌 Day 31: Docker Multi-Stage Builds & Image Optimization
+1. FROM golang:1.21-alpine AS builder - Use build stage with full compiler toolchain
+2. COPY --from=builder /app/myapp . - Extract only compiled binaries into minimal production runtime image
+3. docker build -t optimized-go-app:v1 . - Build production-ready micro Docker image (15.9 MB)
