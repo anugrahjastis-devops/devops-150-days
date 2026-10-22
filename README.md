@@ -318,3 +318,7 @@ Day 28 covers persistent data storage mechanisms in Dockerized environments usin
 📌 Day 32: Docker Healthchecks & Container Monitoring
 1. HEALTHCHECK --interval=5s --timeout=3s - Configure automated container health checks inside Dockerfile
 2. docker inspect --format='{{json .State.Health.Status}}' - Query container real-time health status (healthy/unhealthy)
+
+📌 Day 33: Docker Environment Variables & Secrets Management
+1. docker run --env-file .env - Inject sensitive parameters securely into containers via external environment files
+2. docker run -e MYSQL_ROOT_PASSWORD=... - Pass runtime credentials dynamically to database containers
