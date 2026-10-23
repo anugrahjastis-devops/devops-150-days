@@ -322,3 +322,7 @@ Day 28 covers persistent data storage mechanisms in Dockerized environments usin
 📌 Day 33: Docker Environment Variables & Secrets Management
 1. docker run --env-file .env - Inject sensitive parameters securely into containers via external environment files
 2. docker run -e MYSQL_ROOT_PASSWORD=... - Pass runtime credentials dynamically to database containers
+
+📌 Day 34: Docker Networking & Multi-Container Communication
+1. docker network create my-custom-network - Create custom isolated bridge networks
+2. docker run --network my-custom-network - Attach containers to user-defined networks for automated DNS discovery
