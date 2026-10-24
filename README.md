@@ -326,3 +326,8 @@ Day 28 covers persistent data storage mechanisms in Dockerized environments usin
 📌 Day 34: Docker Networking & Multi-Container Communication
 1. docker network create my-custom-network - Create custom isolated bridge networks
 2. docker run --network my-custom-network - Attach containers to user-defined networks for automated DNS discovery
+
+📌 Day 35: Docker Compose Basics & Multi-Container Orchestration
+1. docker compose up -d - Launch entire multi-container applications in detached mode using YAML specifications
+2. docker compose ps - Inspect active services and port mappings across orchestrated containers
+3. docker compose down - Gracefully stop and clean up all multi-service containers and networks
