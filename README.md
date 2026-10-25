@@ -331,3 +331,7 @@ Day 28 covers persistent data storage mechanisms in Dockerized environments usin
 1. docker compose up -d - Launch entire multi-container applications in detached mode using YAML specifications
 2. docker compose ps - Inspect active services and port mappings across orchestrated containers
 3. docker compose down - Gracefully stop and clean up all multi-service containers and networks
+
+📌 Day 36: Docker Volumes & Persistent Data Storage
+1. volumes: & db_data:/var/lib/mysql - Mount managed Docker volumes to container paths for persistent data storage
+2. docker volume ls - List and audit active persistent data volumes on the host system
