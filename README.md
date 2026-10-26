@@ -335,3 +335,7 @@ Day 28 covers persistent data storage mechanisms in Dockerized environments usin
 📌 Day 36: Docker Volumes & Persistent Data Storage
 1. volumes: & db_data:/var/lib/mysql - Mount managed Docker volumes to container paths for persistent data storage
 2. docker volume ls - List and audit active persistent data volumes on the host system
+
+📌 Day 37: Custom Docker Images & Dockerfile Creation
+1. docker build -t my-custom-web-app:v1 . - Build custom Docker images using instructions inside a Dockerfile
+2. docker run -d -p 9090:80 - Run containers from custom images with explicit port mappings
