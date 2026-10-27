@@ -339,3 +339,8 @@ Day 28 covers persistent data storage mechanisms in Dockerized environments usin
 📌 Day 37: Custom Docker Images & Dockerfile Creation
 1. docker build -t my-custom-web-app:v1 . - Build custom Docker images using instructions inside a Dockerfile
 2. docker run -d -p 9090:80 - Run containers from custom images with explicit port mappings
+
+📌 Day 38: Pushing Custom Docker Images to Docker Hub
+1. docker login - Authenticated securely with Docker Hub using Personal Access Token (PAT)
+2. docker tag my-custom-web-app:v1 anugrahjastis/my-custom-web-app:v1 - Tagged local image for remote repository
+3. docker push anugrahjastis/my-custom-web-app:v1 - Uploaded custom image layers to Docker Hub
