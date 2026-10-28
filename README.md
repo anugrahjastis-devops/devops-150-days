@@ -344,3 +344,8 @@ Day 28 covers persistent data storage mechanisms in Dockerized environments usin
 1. docker login - Authenticated securely with Docker Hub using Personal Access Token (PAT)
 2. docker tag my-custom-web-app:v1 anugrahjastis/my-custom-web-app:v1 - Tagged local image for remote repository
 3. docker push anugrahjastis/my-custom-web-app:v1 - Uploaded custom image layers to Docker Hub
+
+📌 Day 39: Pulling Docker Images & Decoupled Execution
+1. docker rmi anugrahjastis/my-custom-web-app:v1 - Removed local image to verify remote pull execution
+2. docker pull anugrahjastis/my-custom-web-app:v1 - Downloaded custom image directly from Docker Hub registry
+3. docker run -d -p 9090:80 --name pulled-web-container anugrahjastis/my-custom-web-app:v1 - Deployed pulled image on port 9090
