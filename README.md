@@ -349,3 +349,8 @@ Day 28 covers persistent data storage mechanisms in Dockerized environments usin
 1. docker rmi anugrahjastis/my-custom-web-app:v1 - Removed local image to verify remote pull execution
 2. docker pull anugrahjastis/my-custom-web-app:v1 - Downloaded custom image directly from Docker Hub registry
 3. docker run -d -p 9090:80 --name pulled-web-container anugrahjastis/my-custom-web-app:v1 - Deployed pulled image on port 9090
+
+📌 Day 40: Docker Inspect, Logs & Resource Monitoring
+1. docker logs pulled-web-container - Inspected runtime container application output and errors
+2. docker inspect pulled-web-container - Analyzed low-level container metadata and network configuration
+3. docker stats - Tracked real-time CPU and memory utilization of active containers
