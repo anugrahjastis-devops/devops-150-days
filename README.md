@@ -354,3 +354,7 @@ Day 28 covers persistent data storage mechanisms in Dockerized environments usin
 1. docker logs pulled-web-container - Inspected runtime container application output and errors
 2. docker inspect pulled-web-container - Analyzed low-level container metadata and network configuration
 3. docker stats - Tracked real-time CPU and memory utilization of active containers
+
+📌 Day 41: Introduction to Docker Compose & YAML Syntax
+1. docker-compose.yml - Defined multi-container services (Nginx web server & Redis cache)
+2. docker compose up -d - Launched multi-container infrastructure in background mode
