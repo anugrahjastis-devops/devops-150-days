@@ -358,3 +358,7 @@ Day 28 covers persistent data storage mechanisms in Dockerized environments usin
 📌 Day 41: Introduction to Docker Compose & YAML Syntax
 1. docker-compose.yml - Defined multi-container services (Nginx web server & Redis cache)
 2. docker compose up -d - Launched multi-container infrastructure in background mode
+
+📌 Day 42: Docker Compose Environment Variables & .env Management
+1. .env file configuration - Stored dynamic configuration and secrets securely
+2. Variable Interpolation (${PORT}) - Injected environment variables dynamically into docker-compose.yml
