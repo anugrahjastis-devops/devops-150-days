@@ -362,3 +362,7 @@ Day 28 covers persistent data storage mechanisms in Dockerized environments usin
 📌 Day 42: Docker Compose Environment Variables & .env Management
 1. .env file configuration - Stored dynamic configuration and secrets securely
 2. Variable Interpolation (${PORT}) - Injected environment variables dynamically into docker-compose.yml
+
+📌 Day 43: Docker Volumes & Data Persistence
+1. Named Volumes (`pg_data`) - Configured persistent storage for PostgreSQL database to prevent data loss on container deletion.
+2. Docker Compose Volume Mapping - Bound container internal storage to Docker-managed volumes.
