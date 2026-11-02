@@ -366,3 +366,7 @@ Day 28 covers persistent data storage mechanisms in Dockerized environments usin
 📌 Day 43: Docker Volumes & Data Persistence
 1. Named Volumes (`pg_data`) - Configured persistent storage for PostgreSQL database to prevent data loss on container deletion.
 2. Docker Compose Volume Mapping - Bound container internal storage to Docker-managed volumes.
+
+📌 Day 44: Custom Dockerfiles & Building Docker Images
+1. Custom Dockerfile Syntax - Used instructions like `FROM`, `COPY`, `RUN`, and `CMD` to package custom web pages.
+2. Image Building & Deployment - Built custom Nginx image using `docker build -t` and ran it successfully on port 8083.
