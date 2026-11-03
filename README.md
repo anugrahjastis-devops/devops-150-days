@@ -370,3 +370,7 @@ Day 28 covers persistent data storage mechanisms in Dockerized environments usin
 📌 Day 44: Custom Dockerfiles & Building Docker Images
 1. Custom Dockerfile Syntax - Used instructions like `FROM`, `COPY`, `RUN`, and `CMD` to package custom web pages.
 2. Image Building & Deployment - Built custom Nginx image using `docker build -t` and ran it successfully on port 8083.
+
+📌 Day 45: Docker Networking & Custom Bridge Networks
+1. Custom Bridge Network Creation - Created isolated custom networks using `docker network create --driver bridge`.
+2. Container Network Binding - Deployed custom Nginx container (`networked-web-container`) to the custom bridge network and verified via `docker network inspect`.
