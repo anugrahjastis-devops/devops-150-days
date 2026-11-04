@@ -374,3 +374,7 @@ Day 28 covers persistent data storage mechanisms in Dockerized environments usin
 📌 Day 45: Docker Networking & Custom Bridge Networks
 1. Custom Bridge Network Creation - Created isolated custom networks using `docker network create --driver bridge`.
 2. Container Network Binding - Deployed custom Nginx container (`networked-web-container`) to the custom bridge network and verified via `docker network inspect`.
+
+📌 Day 46: Container-to-Container Communication & DNS Resolution
+1. Automatic DNS Resolution - Verified that custom bridge networks automatically resolve container names to IP addresses without manual intervention.
+2. Inter-Container Ping Test - Successfully communicated between independent containers (`alpine` to `container-one`) by name with 0% packet loss.
