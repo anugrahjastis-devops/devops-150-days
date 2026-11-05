@@ -378,3 +378,7 @@ Day 28 covers persistent data storage mechanisms in Dockerized environments usin
 📌 Day 46: Container-to-Container Communication & DNS Resolution
 1. Automatic DNS Resolution - Verified that custom bridge networks automatically resolve container names to IP addresses without manual intervention.
 2. Inter-Container Ping Test - Successfully communicated between independent containers (`alpine` to `container-one`) by name with 0% packet loss.
+
+📌 Day 47: Docker Multi-stage Builds & Image Optimization
+1. Multi-Stage Dockerfile Architecture - Used multiple `FROM` instructions to separate the build/compilation environment from the lightweight production runtime.
+2. Artifact Copying (`--from=builder`) - Extracted only the required built assets into an optimized `nginx:alpine` production image, drastically reducing size and boosting security.
