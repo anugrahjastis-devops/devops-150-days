@@ -382,3 +382,7 @@ Day 28 covers persistent data storage mechanisms in Dockerized environments usin
 📌 Day 47: Docker Multi-stage Builds & Image Optimization
 1. Multi-Stage Dockerfile Architecture - Used multiple `FROM` instructions to separate the build/compilation environment from the lightweight production runtime.
 2. Artifact Copying (`--from=builder`) - Extracted only the required built assets into an optimized `nginx:alpine` production image, drastically reducing size and boosting security.
+
+📌 Day 48: Docker Restart Policies & Container Resilience
+1. High-Availability Configuration - Implemented `--restart always` policy on production containers to ensure automatic recovery from crashes and host reboots.
+2. Resilience Testing - Deployed `resilient-container` to guarantee fault-tolerant runtime operations without manual intervention.
