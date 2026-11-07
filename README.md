@@ -386,3 +386,7 @@ Day 28 covers persistent data storage mechanisms in Dockerized environments usin
 📌 Day 48: Docker Restart Policies & Container Resilience
 1. High-Availability Configuration - Implemented `--restart always` policy on production containers to ensure automatic recovery from crashes and host reboots.
 2. Resilience Testing - Deployed `resilient-container` to guarantee fault-tolerant runtime operations without manual intervention.
+
+📌 Day 49: Docker Monitoring, Resource Stats & Logging
+1. Container Observability - Explored real-time performance tracking using `docker stats` for CPU, memory, and network usage.
+2. Application Troubleshooting - Tracked container execution trails and runtime output using `docker logs` for effective debugging.
