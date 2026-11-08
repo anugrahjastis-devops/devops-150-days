@@ -390,3 +390,7 @@ Day 28 covers persistent data storage mechanisms in Dockerized environments usin
 📌 Day 49: Docker Monitoring, Resource Stats & Logging
 1. Container Observability - Explored real-time performance tracking using `docker stats` for CPU, memory, and network usage.
 2. Application Troubleshooting - Tracked container execution trails and runtime output using `docker logs` for effective debugging.
+
+📌 Day 50: Docker Image Security & Vulnerability Scanning
+1. Container Security Audit - Scanned production Docker images using Trivy to detect CVEs and software package vulnerabilities (`Libexpat`, `curl`, `zlib`).
+2. Vulnerability Severity Tracking - Analyzed HIGH and MEDIUM severity security flaws to enforce secure enterprise CI/CD gates.
