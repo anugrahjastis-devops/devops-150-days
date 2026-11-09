@@ -395,4 +395,4 @@ Day 28 covers persistent data storage mechanisms in Dockerized environments usin
 1. Container Security Audit - Scanned production Docker images using Trivy to detect CVEs and software package vulnerabilities (`Libexpat`, `curl`, `zlib`).
 2. Vulnerability Severity Tracking - Analyzed HIGH and MEDIUM severity security flaws to enforce secure enterprise CI/CD gates.
 
-- **Day 51:** Docker Compose basics, writing `docker-compose.yml` configurations, and managing multi-container application stacks using single-command orchestration (`docker compose up -d`).
+- **Day 51:** Docker Compose basics, writing `docker-compose.yml` configurations, and managing multi-container application stacks using single-command orchestration (`docker compose up -d`)
