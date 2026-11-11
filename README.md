@@ -389,3 +389,5 @@ Day 28 covers persistent data storage mechanisms in Dockerized environments usin
 - **Day 51:** Docker Compose basics, writing `docker-compose.yml` configurations, and managing multi-container application stacks using single-command orchestration (`docker compose up -d`)
 
 - **Day 52:** Docker Networking fundamentals, custom bridge networks (`docker network create`), attaching containers to isolated networks, and inspecting IP configurations.
+
+- **Day 53:** Docker Volumes & Data Persistence, volume creation (`docker volume create`), inspection, mounting volumes to containers (`-v`), and resource cleanup.
