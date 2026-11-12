@@ -391,3 +391,5 @@ Day 28 covers persistent data storage mechanisms in Dockerized environments usin
 - **Day 52:** Docker Networking fundamentals, custom bridge networks (`docker network create`), attaching containers to isolated networks, and inspecting IP configurations.
 
 - **Day 53:** Docker Volumes & Data Persistence, volume creation (`docker volume create`), inspection, mounting volumes to containers (`-v`), and resource cleanup.
+
+- **Day 54:** Writing custom Dockerfiles, building container images from scratch (`docker build`), using `COPY` and `EXPOSE` instructions, and deploying custom applications.
