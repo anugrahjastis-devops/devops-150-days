@@ -393,3 +393,5 @@ Day 28 covers persistent data storage mechanisms in Dockerized environments usin
 - **Day 53:** Docker Volumes & Data Persistence, volume creation (`docker volume create`), inspection, mounting volumes to containers (`-v`), and resource cleanup.
 
 - **Day 54:** Writing custom Dockerfiles, building container images from scratch (`docker build`), using `COPY` and `EXPOSE` instructions, and deploying custom applications.
+
+- **Day 55:** Introduction to Docker Compose, YAML syntax configuration, multi-container orchestration (`web` and `db` services), and lifecycle management (`docker compose up` / `down`).
