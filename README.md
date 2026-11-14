@@ -395,3 +395,5 @@ Day 28 covers persistent data storage mechanisms in Dockerized environments usin
 - **Day 54:** Writing custom Dockerfiles, building container images from scratch (`docker build`), using `COPY` and `EXPOSE` instructions, and deploying custom applications.
 
 - **Day 55:** Introduction to Docker Compose, YAML syntax configuration, multi-container orchestration (`web` and `db` services), and lifecycle management (`docker compose up` / `down`).
+
+- **Day 56:** Advanced Docker Compose, integrating persistent volumes (`volumes`, driver local), data state preservation across container lifecycles, and verification (`docker volume ls`).
