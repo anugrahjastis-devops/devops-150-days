@@ -403,3 +403,5 @@ Day 28 covers persistent data storage mechanisms in Dockerized environments usin
 - **Day 58:** **Project 2 (Multi-Stage Docker Build Optimization)** — Built a production-ready Go web application using a two-stage `Dockerfile` (`golang:1.21` builder + `alpine:latest` runtime) and `.dockerignore`, reducing container image size by ~98% (from `1.29 GB` down to `23.6 MB`).
 
 - **Day 59:** Mastered CI/CD Core Concepts, SDLC, Pipeline Architecture, and Production Deployment Strategies (Recreate, Rolling Updates, Blue-Green, and Canary).
+
+- **Day 60:** Introduction to CI/CD & First Live GitHub Actions Pipeline – Mastered CI/CD fundamentals, deployment strategies, and successfully executed a multi-stage workflow on GitHub Actions with automated validation checks.
