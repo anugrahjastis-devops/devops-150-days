@@ -1,0 +1,34 @@
+name: Day 27 - Multi-Container Docker Compose CI
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  compose-test:
+    name: Test Docker Compose Services
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Verify Docker Compose Installation
+        run: |
+          echo "=============================================="
+          echo "🐳 CHECKING DOCKER COMPOSE VERSION 🐳"
+          docker compose version
+          echo "=============================================="
+
+      - name: Run Multi-Container Setup via Compose
+        run: |
+          echo "Starting services..."
+          sudo docker compose up -d
+          echo "Verifying active containers..."
+          sudo docker ps
+          echo "Cleaning up containers..."
+          sudo docker compose down
+          echo "=============================================="
+          echo "✅ DAY 27 COMPOSE PIPELINE SUCCESSFUL! ✅"
+          echo "=============================================="

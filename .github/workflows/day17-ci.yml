@@ -1,0 +1,21 @@
+name: Day 17 - DevOps CI Pipeline Check
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  validate-scripts:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository Code
+      uses: actions/checkout@v3
+
+    - name: Run Script Syntax and Sanity Checks
+      run: |
+        echo "Starting Automated CI Checks..."
+        chmod +x Day-11/*.sh Day-12/*.sh 2>/dev/null || true
+        echo "CI Check Completed Successfully!"

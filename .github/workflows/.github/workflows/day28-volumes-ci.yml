@@ -1,0 +1,40 @@
+name: Day 28 - Docker Volumes and Persistence CI
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  test-volumes:
+    name: Verify Data Persistence
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Spin Up Containers with Volumes
+        run: |
+          echo "=============================================="
+          echo "🚀 STARTING SERVICES WITH VOLUMES 🚀"
+          sudo docker compose up -d
+          echo "=============================================="
+
+      - name: Verify Volume Creation & Data Persistence
+        run: |
+          echo "=============================================="
+          echo "📦 CHECKING DOCKER VOLUMES 📦"
+          sudo docker volume ls
+          echo "=============================================="
+          echo "Verifying data inside container..."
+          sudo docker exec devops-app-container cat /app/data/app.log
+          echo "=============================================="
+
+      - name: Cleanup Services & Keep Volumes
+        run: |
+          echo "Cleaning up containers..."
+          sudo docker compose down
+          echo "=============================================="
+          echo "✅ DAY 28 VOLUME PIPELINE SUCCESSFUL! ✅"
+          echo "=============================================="

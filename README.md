@@ -1,0 +1,405 @@
+# 🚀 DevOps 150-Day Challenge Log
+
+## 📌 Day 1: Linux Basics & Navigation
+1. `pwd` - Print current working directory path
+2. `whoami` - Display current logged-in user
+3. `ls` - List files and directories
+4. `ls -la` - List all files including hidden ones with details
+5. `mkdir` - Create a new directory
+6. `cd` - Change directory
+7. `cd ..` - Move back to parent directory
+8. `touch` - Create an empty file
+9. `echo` - Print text or append content into files
+10. `cat` - Display contents of a file
+
+## 📌 Day 2: Advanced Linux & Log Searching
+1. `chmod 755` - Grant executable permissions
+2. `grep` - Search text patterns in log files
+3. `grep -i` - Case-insensitive text search
+4. `grep -n` - Search text and show line numbers
+5. `find . -name` - Search files by name in directories
+6. `find . -type f` - Search specifically for files only
+7. `wc -l` - Count total line numbers in a file
+8. `head -n` - View starting lines of a file
+9. `tail -n` - View latest/ending lines of a file
+10. `history` - View executed shell command history
+
+## 📌 Day 3: Process Handling, Storage & User Ownership
+1. `ps aux` - Display all running processes on the system
+2. `top` - Display real-time system resource & process usage
+3. `kill -9 <PID>` - Forcefully terminate a process by ID
+4. `pgrep <name>` - Search process ID by application name
+5. `df -h` - Display disk space usage in human-readable format
+6. `id` - Show user and group IDs for active user
+7. `useradd` - Create a new system user
+8. `passwd` - Update or set user password
+9. `chown` - Change file/directory ownership and group
+10. `groups` - List all groups a user belongs to
+
+## 📌 Day 4: Networking Basics, Port Monitoring & Archiving
+1. `ping` - Test network connectivity and reachability to a host
+2. `curl -I` - Fetch HTTP response headers from a web server
+3. `wget` - Download files directly from the web via CLI
+4. `ss -tuln` - Display active listening TCP/UDP ports
+5. `nslookup` - Query DNS servers to resolve domain names to IPs
+6. `tar -czvf` - Create a compressed tarball archive (.tar.gz)
+7. `tar -xzvf` - Extract contents from a compressed tarball archive
+8. `zip -r` - Create a recursive zip archive of files/directories
+9. `unzip` - Extract files from a zip archive
+10. `scp` - Securely copy files between remote hosts over SSH
+
+## 📌 Day 5: Shell Scripting Basics & Automation Fundamentals
+1. `#!/bin/bash` - Shebang line specifying the Bash interpreter
+2. `chmod +x` - Grant execution permissions to a shell script
+3. `./script.sh` - Execute a local shell script file
+4. `Variables` - Store dynamic data using `KEY=VALUE` syntax
+5. `echo` - Output text or variable values to the terminal
+6. `read` - Accept dynamic input from the user during script execution
+7. `if/else` - Execute conditional logic blocks in scripts
+8. `for/while loops` - Iterate over lists or conditions to automate tasks
+9. `$1, $2` - Access positional arguments passed to scripts
+10. `$(command)` - Use command substitution to capture CLI output in variables
+
+### 📌 Day 6: Advanced Text Processing & Log Analysis
+
+1. `grep "ERROR" app.log` - Search specific pattern/word in log file
+2. `grep -i "error" app.log` - Case-insensitive text search
+3. `grep -n "500" app.log` - Search text and show line numbers
+4. `grep -c "FAIL" app.log` - Count total occurrences of matching pattern
+5. `awk '{print $1}' app.log` - Extract specific column (e.g., Date or IP)
+6. `awk '$3 == "ERROR"' app.log` - Conditional filtering based on field values
+7. `sed 's/http/https/g' config.txt` - Stream replace text (output preview)
+8. `sed -i 's/old/new/g' file.txt` - Replace text directly inside file permanently
+9. `cat app.log | grep "ERROR" | wc -l` - Pipeline commands to count total errors
+10. `sort | uniq -c` - Sort and count unique log entries
+
+### 📌 Day 7: System Validation & Benchmarking
+
+1. `uname -a` - Check kernel version, system architecture, and OS release details[cite: 16]
+2. `cat /etc/os-release` - Inspect Linux distribution name, version ID, and release metadata[cite: 16]
+3. `pwd` - Print current working directory path[cite: 16]
+4. `whoami` - Display current active logged-in user[cite: 16]
+5. `uptime` - View system running time, logged-in users, and CPU load averages[cite: 16]
+6. `free -h` - Check memory/RAM and swap space utilization in human-readable format[cite: 16]
+7. `df -h` - Check disk space usage across all mounted filesystems[cite: 16]
+8. `ip addr` - Display active network interfaces, IP addresses, and MAC details[cite: 15]
+9. `env | head -n 5` - View environment variables set in current shell session[cite: 15]
+10. `date` - Display current system date, time, and timezone[cite: 15]
+
+### 📌 Day 8: Advanced File Permissions, Ownership & Access Control
+
+1. `ls -l` - Inspect detailed file permissions, links, owner, group, and timestamps
+2. `chmod 755` - Assign read, write, and execute permissions to owner, and read/execute to group/others
+3. `chown root:root` - Change file ownership and group ownership to root for system security
+4. `sudo` - Execute administrative commands with elevated security privileges
+
+🚀 Day 9: Linux Process Management, Monitoring & Termination
+
+1. ps aux - Captures a snapshot of all running processes with PIDs, user details, and CPU/Memory usage
+2. top - Displays real-time, dynamic system resource usage including CPU states and total RAM consumption
+3. & (Background Execution) - Runs tasks asynchronously in the background to keep the terminal interactive
+4. grep - Filters specific process names from running system snapshots (e.g., ps aux | grep sleep)
+5. kill -9 - Forcibly and immediately terminates unresponsive or rogue processes using their Process ID (PID)
+
+📌 Day 10: Linux System Services, systemd & Service Management
+
+1. systemctl status <service> - Inspects the active/inactive state, PID, memory usage, and recent logs of a system daemon
+2. sudo systemctl start <service> - Manually starts an inactive or stopped background service
+3. sudo systemctl stop <service> - Safely terminates a running service without data corruption
+4. sudo systemctl restart <service> - Completely stops and immediately restarts a service to apply configuration changes
+5. sudo systemctl reload <service> - Refreshes service configuration files without interrupting active client connections (Zero-Downtime Reload)
+6. sudo systemctl enable <service> - Links a service to system boot so it automatically starts on server reboot
+7. sudo systemctl disable <service> - Removes auto-boot symlinks to prevent unused services from starting automatically
+
+📌 Day 11: Shell Scripting Basics & Bash Automation
+
+1. Shebang (#!/bin/bash) - Defines the script interpreter for OS execution
+2. Variables - Stores dynamic system data and user variables for automated workflows
+3. Command Substitution $(command) - Captures command output directly into variables
+4. chmod +x <script.sh> - Grants executable permissions to bash scripts
+5. ./script.sh - Executes the script in the active shell context
+6. Hands-on Project: Built automated system health reporting script (sys_info.sh) tracking date, user, uptime, and disk usage
+
+📌 Day 12: Shell Scripting – Variables, User Input & Conditional Logic
+
+1. User Input (read) - Captures user input interactively during script runtime
+2. Conditional Logic (if-else) - Implements decision-making workflows in shell scripts
+3. Directory Test Operator (-d) - Checks if a specified directory path exists before processing
+4. File Count & Inspection - Combines ls, wc, and pipeline execution to dynamically analyze files
+5. Hands-on Project: Developed interactive directory inspection tool (check_dir.sh) to validate folder existence and report total file counts
+
+📌 Day 13: Shell Scripting – Loops & Automated Monitoring Tasks
+
+1. For Loops - Used for iterating over defined lists (log files, directories, server lists)
+2. While Loops - Executes tasks continuously based on dynamic conditional checks
+3. Execution Control (sleep) - Introduces timed delays between loop iterations to optimize CPU usage
+4. Loop Counters - Increments numeric tracking variables inside while execution blocks
+5. Hands-on Project: Developed service_monitor.sh script combining for-loop log processing and while-loop active monitoring
+
+📌 Day 14: Advanced Shell Scripting – Functions & Error Handling
+
+1. Functions (my_func() {}) - Modularized script logic into reusable functional blocks
+2. Parameters ($1, $2) - Passed dynamic arguments directly into execution functions
+3. Exit Status ($?) - Inspected command execution health codes (0 for Success, non-zero for Errors)
+4. Custom Error Trapping - Implemented explicit script terminations (exit 1) upon critical resource failures
+5. Hands-on Project: Built a production-grade validation script (production_checker.sh) featuring timestamped logging and fail-safe file assertion checks
+
+### 📌 Day 15: Production Scripting & Monitoring Sentinel
+1. **Server Sentinel Script** - Developed devops_server_sentinel.sh for active system health analysis.
+2. **System Health Metrics** - Automated CPU usage, memory utilization, and disk space tracking.
+3. **Threshold Alerts** - Configured custom assertion rules and alert mechanisms for critical resource limits.
+4. **Hands-on Project:** Built a production-ready server sentinel script to continuously monitor system resources and write timestamped logs.
+
+### 📌 Day 16: Version Control & Git Management
+1. **Repository Synchronization** - Mastered tracking remote branches, fetching updates, and resolving upstream conflicts.
+2. **Advanced Git Workflows** - Applied stash management, soft resets, and interactive rebase commands.
+3. **Hands-on Project:** Successfully unified divergent local commits and synchronized all Day 11-16 DevOps scripts with the main GitHub branch.
+
+### 📌 Day 17: Continuous Integration & GitHub Actions Workflow
+1. **CI/CD Pipeline Basics** - Configured automated workflow triggers on repository push and pull requests.
+2. **YAML Pipeline Syntax** - Structured jobs, runners (ubuntu-latest), and step-by-step checkout actions.
+3. **Automated Sanity Execution** - Configured automated execution permissions and script validation checks.
+4. **Hands-on Project:** Built and deployed `.github/workflows/day17-ci.yml` to execute automated CI builds on GitHub.
+
+### 📌 Day 18: GitHub Actions Matrix Builds & Dynamic Environment Variables
+1. **Matrix Strategy Testing** - Configured parallel execution across multiple OS runners (`ubuntu-latest`, `ubuntu-22.04`) to validate cross-platform script stability.
+2. **Dynamic Environment Configuration** - Integrated global pipeline `env` block to manage dynamic build metadata like `PROJECT_NAME` and `ENV_STAGE`.
+3. **Multi-Environment Pipeline Validation** - Executed automated script existence and directory structure validation inside `.github/workflows/day18-matrix-ci.yml`.
+4. **Hands-on Project:** Successfully deployed multi-runner matrix CI workflow and verified parallel job execution under GitHub Actions.
+
+### 📌 Day 19: GitHub Actions Secrets & Artifacts Management
+1. **GitHub Secrets Integration** - Secured sensitive credentials by binding repository-level secret `DB_PASSWORD` using dynamic environment mapping (`${{ secrets.DB_PASSWORD }}`).
+2. **Automated Log Masking** - Verified built-in GitHub Actions log masking security mechanisms where sensitive output values are automatically obfuscated as `***` in execution logs.
+3. **Artifact Upload Pipeline** - Automated audit log generation and configured long-term file retention using `actions/upload-artifact@v3` to preserve build outputs (`day19-audit-logs.zip`).
+4. **Hands-on Project:** Successfully built and executed `.github/workflows/day19-secrets-artifacts.yml` to secure credentials and store pipeline audit logs.
+
+### 📌 Day 20: Advanced Workflow Triggers, Event Filters & Manual Dispatch
+1. **Multi-Event Triggering** - Configured workflow activation across multiple developer lifecycle events including `push`, `pull_request`, and manual execution via `workflow_dispatch`.
+2. **Path Filtering Strategy** - Optimized CI runner usage by enforcing `paths` filters to execute jobs only when specific workflow or project directories (`Day-15/**`) undergo changes.
+3. **Manual Trigger Customization** - Built interactive `workflow_dispatch` inputs enabling developers to pass dynamic deployment target parameters (`staging` vs `production`) directly from the GitHub UI.
+4. **Hands-on Project:** Successfully deployed `.github/workflows/day20-triggers.yml` to minimize unnecessary build triggers and enforce production-grade CI event controls.
+
+### 📌 Day 21: Automated Testing, Code Quality (Linting) & Job Dependencies
+
+1. **Automated Code Quality & Linting (`shellcheck`)** - Integrated static analysis to automatically detect syntax errors, potential bugs, and formatting issues in shell scripts prior to testing.
+2. **Sequential Multi-Job Pipelines (`needs`)** - Implemented job dependency chains to ensure strict execution order (`Linting` ➔ `Testing` ➔ `Build/Deploy`).
+3. **Fail-Fast Safety Controls** - Configured automated pipeline stops on lint or unit test failure, preventing broken code from advancing to production stages.
+4. **Hands-on Project:** Successfully created and validated `.github/workflows/day21-testing-linting.yml` with a 3-stage dependency graph.
+
+### 📌 Day 22: Reusable Workflows (`workflow_call`) & Modular Pipeline Architecture
+
+1. **Centralized Workflow Reusability (`workflow_call`)** - Created modular CI/CD components to eliminate code duplication across multiple environments (DRY Principle).
+2. **Parameterization with Custom Inputs** - Implemented dynamic `inputs` passing (`target-environment`) from parent pipelines to child reusable workflows.
+3. **Sequential Pipeline Chain** - Configured parent workflow to execute staging audits prior to triggering production environment audits.
+4. **Hands-on Project:** Built and verified `.github/workflows/reusable-lint-check.yml` (Child) and `.github/workflows/day22-caller-pipeline.yml` (Parent).
+
+### 📌 Day 23: Self-Hosted Runners Concept & Environment Inspection
+
+1. **Runner Infrastructure Inspection** - Audited underlying execution environments (Kernel, OS specs, disk, and memory limits) using automated CI/CD steps.
+2. **Infrastructure Observability** - Added real-time diagnostics (`df -h`, `free -m`, `uname -a`) to monitor runner health before running build/deployment tasks.
+3. **Local Script Execution** - Executed custom bash diagnostic scripts (`devops_server_sentinel.sh`) directly on the runner host environment.
+4. **Hands-on Project:** Configured and verified `.github/workflows/day23-system-audit.yml` to audit runner hardware and execute local system checks.
+
+# Day 24: Containerized CI/CD Pipelines in GitHub Actions
+
+## 📌 Overview
+Day 24 focuses on running CI/CD jobs inside isolated Docker containers rather than directly on the host machine. This ensures consistent execution environments, prevents dependency pollution, and enables reproducible builds.
+
+## 🛠️ Key Concepts & Architecture
+* **Containerized Workflows:** Defining the `container:` key in GitHub Actions workflow to run steps inside a pre-built Docker image (`ubuntu:22.04`).
+* **Environment Isolation:** Isolating runtime dependencies from the host self-hosted runner.
+* **Docker Daemon Integration:** Leveraging host Docker capabilities for container spin-up and teardown.
+
+## 🚀 Workflow File (`.github/workflows/day24-containerized-ci.yml`)
+```yaml
+name: Day 24 - Containerized CI Pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  docker-job:
+    name: Run Inside Docker Container
+    runs-on: self-hosted
+    container:
+      image: ubuntu:22.04
+
+    steps:
+      - name: Check Container Environment
+        run: |
+          echo "=============================================="
+          echo "🚀 RUNNING INSIDE A DOCKER CONTAINER! 🚀"
+          echo "Container OS Release:"
+          cat /etc/os-release
+          echo "Current User: $(whoami)"
+          echo "Container Hostname: $(hostname)"
+          echo "=============================================="
+
+# Day 25: GitHub Actions Secret Management & Environment Variables
+
+## 📌 Overview
+Day 25 focuses on securing sensitive credentials (API keys, tokens, passwords) using GitHub Secrets and managing configuration parameters across different scopes using Environment Variables (`env`).
+
+## 🛠️ Key Concepts
+* **GitHub Secrets:** Encrypted storage for sensitive keys (`${{ secrets.MY_API_KEY }}`), which are automatically masked in workflow logs.
+* **Environment Scopes:** Defining variables at the workflow-level (`env`) and job-level (`env`) for modular configuration.
+
+## 🚀 Workflow File (`.github/workflows/day25-secrets-env.yml`)
+* Implemented workflow-level and job-level environment variables.
+* Integrated secure secret injection tested via self-hosted runner.
+
+# Day 26: Automated Docker Image Build and Push Pipeline
+
+## 📌 Overview
+Day 26 integrates Docker image building and registry publishing directly into the GitHub Actions CI/CD pipeline using encrypted credentials and self-hosted runners.
+
+## 🛠️ Key Concepts
+* **Docker Login Action:** Secure authentication using repository secrets (`DOCKER_USERNAME` and `DOCKER_PASSWORD`).
+* **Docker Buildx Integration:** Enabled Buildx capabilities on local self-hosted runner for container synthesis.
+* **Automated Registry Push:** Automatically compiled root `Dockerfile` and published image tags to Docker Hub.
+
+## 🚀 Workflow File (`.github/workflows/day26-docker-build-push.yml`)
+* Authenticates with Docker Hub via secure token injection.
+* Compiles root `Dockerfile` context and pushes the image to remote storage (`anugrahjastis/devops-150-days:day26-latest`).
+
+# Day 27: Multi-Container Orchestration with Docker Compose
+
+## 📌 Overview
+Day 27 explores multi-tier application architectures using Docker Compose, enabling the definition and execution of multiple Docker containers simultaneously within CI/CD pipelines.
+
+## 🛠️ Key Concepts
+* **Docker Compose Services:** Managing interdependent services (Web app & Redis DB) using a single YAML blueprint.
+* **Declarative Environments:** Defining container ports, restart policies, and commands cleanly.
+* **Pipeline Orchestration:** Validating multi-container startup and teardown cycles via GitHub Actions self-hosted runners.
+
+## 🚀 Workflow File (`.github/workflows/day27-compose-ci.yml`)
+* Automates service spin-up (`docker compose up -d`) and cleanup (`docker compose down`) inside the runner environment.
+
+# Day 28: Docker Volumes & Persistent Storage in CI/CD
+
+## 📌 Overview
+Day 28 covers persistent data storage mechanisms in Dockerized environments using Named Volumes and Docker Compose, ensuring stateful data survives container lifecycles.
+
+## 🛠️ Key Concepts
+* **Named Volumes:** Managed local storage (`app-data`, `redis-data`) decoupled from container lifecycles.
+* **Stateful Containers:** Storing application logs and database records persistently.
+* **Automated Persistence Verification:** Executing volume validation scripts inside GitHub Actions workflows.
+
+## 🚀 Workflow File (`.github/workflows/day28-volumes-ci.yml`)
+* Validates volume creation (`docker volume ls`) and inspects mounted data retention.
+
+📌 Day 29: Docker Networking & Custom Bridge Networks
+1. docker network ls - List all available Docker networks (bridge, host, none)
+2. docker network create --driver bridge my-custom-network - Create a custom bridge network for inter-container communication
+3. docker run --network my-custom-network - Run containers connected to the custom network
+4. docker exec -it container1 ping container2 - Test communication using container names via Docker's embedded DNS resolution
+
+📌 Day 30: Docker Storage Deep Dive
+1. docker volume create my-app-data - Create Docker managed volume for data persistence
+2. docker run -v my-app-data:/app/data - Mount named volume to ensure data survives container deletion
+3. docker run -v $(pwd):/usr/share/nginx/html - Use Bind Mount for real-time development file sharing
+
+📌 Day 31: Docker Multi-Stage Builds & Image Optimization
+1. FROM golang:1.21-alpine AS builder - Use build stage with full compiler toolchain
+2. COPY --from=builder /app/myapp . - Extract only compiled binaries into minimal production runtime image
+3. docker build -t optimized-go-app:v1 . - Build production-ready micro Docker image (15.9 MB)
+
+📌 Day 32: Docker Healthchecks & Container Monitoring
+1. HEALTHCHECK --interval=5s --timeout=3s - Configure automated container health checks inside Dockerfile
+2. docker inspect --format='{{json .State.Health.Status}}' - Query container real-time health status (healthy/unhealthy)
+
+📌 Day 33: Docker Environment Variables & Secrets Management
+1. docker run --env-file .env - Inject sensitive parameters securely into containers via external environment files
+2. docker run -e MYSQL_ROOT_PASSWORD=... - Pass runtime credentials dynamically to database containers
+
+📌 Day 34: Docker Networking & Multi-Container Communication
+1. docker network create my-custom-network - Create custom isolated bridge networks
+2. docker run --network my-custom-network - Attach containers to user-defined networks for automated DNS discovery
+
+📌 Day 35: Docker Compose Basics & Multi-Container Orchestration
+1. docker compose up -d - Launch entire multi-container applications in detached mode using YAML specifications
+2. docker compose ps - Inspect active services and port mappings across orchestrated containers
+3. docker compose down - Gracefully stop and clean up all multi-service containers and networks
+
+📌 Day 36: Docker Volumes & Persistent Data Storage
+1. volumes: & db_data:/var/lib/mysql - Mount managed Docker volumes to container paths for persistent data storage
+2. docker volume ls - List and audit active persistent data volumes on the host system
+
+📌 Day 37: Custom Docker Images & Dockerfile Creation
+1. docker build -t my-custom-web-app:v1 . - Build custom Docker images using instructions inside a Dockerfile
+2. docker run -d -p 9090:80 - Run containers from custom images with explicit port mappings
+
+📌 Day 38: Pushing Custom Docker Images to Docker Hub
+1. docker login - Authenticated securely with Docker Hub using Personal Access Token (PAT)
+2. docker tag my-custom-web-app:v1 anugrahjastis/my-custom-web-app:v1 - Tagged local image for remote repository
+3. docker push anugrahjastis/my-custom-web-app:v1 - Uploaded custom image layers to Docker Hub
+
+📌 Day 39: Pulling Docker Images & Decoupled Execution
+1. docker rmi anugrahjastis/my-custom-web-app:v1 - Removed local image to verify remote pull execution
+2. docker pull anugrahjastis/my-custom-web-app:v1 - Downloaded custom image directly from Docker Hub registry
+3. docker run -d -p 9090:80 --name pulled-web-container anugrahjastis/my-custom-web-app:v1 - Deployed pulled image on port 9090
+
+📌 Day 40: Docker Inspect, Logs & Resource Monitoring
+1. docker logs pulled-web-container - Inspected runtime container application output and errors
+2. docker inspect pulled-web-container - Analyzed low-level container metadata and network configuration
+3. docker stats - Tracked real-time CPU and memory utilization of active containers
+
+📌 Day 41: Introduction to Docker Compose & YAML Syntax
+1. docker-compose.yml - Defined multi-container services (Nginx web server & Redis cache)
+2. docker compose up -d - Launched multi-container infrastructure in background mode
+
+📌 Day 42: Docker Compose Environment Variables & .env Management
+1. .env file configuration - Stored dynamic configuration and secrets securely
+2. Variable Interpolation (${PORT}) - Injected environment variables dynamically into docker-compose.yml
+
+📌 Day 43: Docker Volumes & Data Persistence
+1. Named Volumes (`pg_data`) - Configured persistent storage for PostgreSQL database to prevent data loss on container deletion.
+2. Docker Compose Volume Mapping - Bound container internal storage to Docker-managed volumes.
+
+📌 Day 44: Custom Dockerfiles & Building Docker Images
+1. Custom Dockerfile Syntax - Used instructions like `FROM`, `COPY`, `RUN`, and `CMD` to package custom web pages.
+2. Image Building & Deployment - Built custom Nginx image using `docker build -t` and ran it successfully on port 8083.
+
+📌 Day 45: Docker Networking & Custom Bridge Networks
+1. Custom Bridge Network Creation - Created isolated custom networks using `docker network create --driver bridge`.
+2. Container Network Binding - Deployed custom Nginx container (`networked-web-container`) to the custom bridge network and verified via `docker network inspect`.
+
+📌 Day 46: Container-to-Container Communication & DNS Resolution
+1. Automatic DNS Resolution - Verified that custom bridge networks automatically resolve container names to IP addresses without manual intervention.
+2. Inter-Container Ping Test - Successfully communicated between independent containers (`alpine` to `container-one`) by name with 0% packet loss.
+
+📌 Day 47: Docker Multi-stage Builds & Image Optimization
+1. Multi-Stage Dockerfile Architecture - Used multiple `FROM` instructions to separate the build/compilation environment from the lightweight production runtime.
+2. Artifact Copying (`--from=builder`) - Extracted only the required built assets into an optimized `nginx:alpine` production image, drastically reducing size and boosting security.
+
+📌 Day 48: Docker Restart Policies & Container Resilience
+1. High-Availability Configuration - Implemented `--restart always` policy on production containers to ensure automatic recovery from crashes and host reboots.
+2. Resilience Testing - Deployed `resilient-container` to guarantee fault-tolerant runtime operations without manual intervention.
+
+📌 Day 49: Docker Monitoring, Resource Stats & Logging
+1. Container Observability - Explored real-time performance tracking using `docker stats` for CPU, memory, and network usage.
+2. Application Troubleshooting - Tracked container execution trails and runtime output using `docker logs` for effective debugging.
+
+📌 Day 50: Docker Image Security & Vulnerability Scanning
+1. Container Security Audit - Scanned production Docker images using Trivy to detect CVEs and software package vulnerabilities (`Libexpat`, `curl`, `zlib`).
+2. Vulnerability Severity Tracking - Analyzed HIGH and MEDIUM severity security flaws to enforce secure enterprise CI/CD gates.
+
+- **Day 51:** Docker Compose basics, writing `docker-compose.yml` configurations, and managing multi-container application stacks using single-command orchestration (`docker compose up -d`)
+
+- **Day 52:** Docker Networking fundamentals, custom bridge networks (`docker network create`), attaching containers to isolated networks, and inspecting IP configurations.
+
+- **Day 53:** Docker Volumes & Data Persistence, volume creation (`docker volume create`), inspection, mounting volumes to containers (`-v`), and resource cleanup.
+
+- **Day 54:** Writing custom Dockerfiles, building container images from scratch (`docker build`), using `COPY` and `EXPOSE` instructions, and deploying custom applications.
+
+- **Day 55:** Introduction to Docker Compose, YAML syntax configuration, multi-container orchestration (`web` and `db` services), and lifecycle management (`docker compose up` / `down`).
+
+- **Day 56:** Advanced Docker Compose, integrating persistent volumes (`volumes`, driver local), data state preservation across container lifecycles, and verification (`docker volume ls`).
+
+- **Day 57:** **Project 1 (Node.js + MongoDB Production Stack)** — Built a multi-container application with custom `Dockerfile`, Docker Compose healthchecks (`service_healthy`), custom bridge network (`app-net`), and verified data persistence via local volumes (`mongo-data`).
+
+- **Day 58:** **Project 2 (Multi-Stage Docker Build Optimization)** — Built a production-ready Go web application using a two-stage `Dockerfile` (`golang:1.21` builder + `alpine:latest` runtime) and `.dockerignore`, reducing container image size by ~98% (from `1.29 GB` down to `23.6 MB`).
+
+- **Day 59:** Mastered CI/CD Core Concepts, SDLC, Pipeline Architecture, and Production Deployment Strategies (Recreate, Rolling Updates, Blue-Green, and Canary).

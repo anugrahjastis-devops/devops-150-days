@@ -1,0 +1,24 @@
+name: Day 24 - Containerized CI Pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  docker-job:
+    name: Run Inside Docker Container
+    runs-on: self-hosted
+    container:
+      image: ubuntu:22.04
+
+    steps:
+      - name: Check Container Environment
+        run: |
+          echo "=============================================="
+          echo "🚀 RUNNING INSIDE A DOCKER CONTAINER! 🚀"
+          echo "Container OS Release:"
+          cat /etc/os-release
+          echo "Current User: $(whoami)"
+          echo "Container Hostname: $(hostname)"
+          echo "=============================================="

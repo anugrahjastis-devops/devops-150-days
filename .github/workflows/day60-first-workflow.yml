@@ -1,0 +1,23 @@
+name: Day 60 - First Live CI Workflow
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:   # Isse aap GitHub UI se manually bhi "Run workflow" button daba kar chala sakte hain
+
+jobs:
+  explore-runner:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step 1 - Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Step 2 - System & Tools Inspection
+        run: |
+          echo "✅ Hello Anugrah! Your first GitHub Actions runner is LIVE!"
+          echo "Current Working Directory: $(pwd)"
+          echo "Files in Repository:"
+          ls -la
+          echo "Checking pre-installed DevOps tools on GitHub Runner:"
+          docker --version
+          git --version
