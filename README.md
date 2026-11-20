@@ -405,5 +405,7 @@ Day 28 covers persistent data storage mechanisms in Dockerized environments usin
 - **Day 59:** Mastered CI/CD Core Concepts, SDLC, Pipeline Architecture, and Production Deployment Strategies (Recreate, Rolling Updates, Blue-Green, and Canary).
 
 - **Day 60:** Introduction to CI/CD & First Live GitHub Actions Pipeline – Mastered CI/CD fundamentals, deployment strategies, and successfully executed a multi-stage workflow on GitHub Actions with automated validation checks.
-
-- **Day 61:** Advanced Triggers, Environment Variables & Encrypted Secrets – Configured branch/path filters and `workflow_dispatch` triggers, defined workflow/step environment variables, and verified GitHub Actions secret handling.
+- **Day 61:** Advanced Triggers, Environment Variables & Encrypted Secrets – Configured branch/path filters, `workflow_dispatch`, workflow/step `env` variables, and verified GitHub Actions secret masking (`***`).
+- **Day 62:** Multi-Job Dependencies, Artifacts & Caching – Built a multi-stage GitHub Actions pipeline using `needs`, `actions/cache@v4`, and artifact upload/download across jobs.
+- **Day 61:** Advanced Triggers, Environment Variables & Encrypted Secrets – Configured branch/path filters, `workflow_dispatch`, workflow/step `env` variables, and verified GitHub Actions secret masking (`***`).
+- **Day 62:** Multi-Job Dependencies, Artifacts & Caching – Built a multi-stage GitHub Actions pipeline using `needs`, `actions/cache@v4`, and artifact upload/download across jobs.
