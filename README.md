@@ -409,3 +409,4 @@ Day 28 covers persistent data storage mechanisms in Dockerized environments usin
 - **Day 61:** Advanced Triggers, Environment Variables & Encrypted Secrets – Configured branch/path filters, `workflow_dispatch`, workflow/step `env` variables, and verified GitHub Actions secret masking (`***`).
 
 - **Day 62:** Multi-Job Dependencies, Artifacts & Caching – Built a multi-stage GitHub Actions pipeline using `needs`, `actions/cache@v4`, and artifact upload/download across jobs.
+- **Day 63:** Matrix Strategy & Conditional Execution – Configured a 6-job parallel matrix build (`dev`, `staging`, `prod` × versions `3.10`, `3.12`) with `fail-fast: false` and `prod`-only conditional security steps.
