@@ -1,0 +1,63 @@
+name: Day 64 - Reusable CI Template
+
+on:
+  workflow_call:
+    inputs:
+      target-env:
+        description: 'Target deployment environment (dev/prod)'
+        required: true
+        type: string
+      service-name:
+        description: 'Microservice name'
+        required: true
+        type: string
+      enable-security-scan:
+        description: 'Run extra security verification'
+        required: false
+        type: boolean
+        default: false
+    secrets:
+      DEPLOY_TOKEN:
+        description: 'Token passed from caller workflow'
+        required: false
+    outputs:
+      artifact-tag:
+        description: 'Generated build tag returned to caller'
+        value: ${{ jobs.modular-build.outputs.generated-tag }}
+      pipeline-result:
+        description: 'Final status of reusable job'
+        value: ${{ jobs.modular-build.outputs.status }}
+
+jobs:
+  modular-build:
+    runs-on: ubuntu-latest
+    outputs:
+      generated-tag: ${{ steps.build-step.outputs.tag }}
+      status: ${{ steps.build-step.outputs.result }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run modular validation & build
+        id: build-step
+        run: |
+          TAG="${{ inputs.service-name }}-${{ inputs.target-env }}-1.0.${{ github.run_number }}"
+          echo "Building service: ${{ inputs.service-name }}"
+          echo "Target Environment: ${{ inputs.target-env }}"
+          echo "Generated Artifact Tag: $TAG"
+          echo "tag=$TAG" >> $GITHUB_OUTPUT
+          echo "result=PASSED" >> $GITHUB_OUTPUT
+
+      - name: Verify passed secret safely
+        run: |
+          if [ -n "${{ secrets.DEPLOY_TOKEN }}" ]; then
+            echo "DEPLOY_TOKEN received safely (masked by GitHub Actions)."
+          else
+            echo "No DEPLOY_TOKEN secret provided; running in default mode."
+          fi
+
+      - name: Conditional security scan inside reusable workflow
+        if: inputs.enable-security-scan == true
+        run: |
+          echo "Running strict security & compliance checks for ${{ inputs.target-env }}..."
+          echo "Security scan passed!"

@@ -1,0 +1,38 @@
+name: Day 64 - Reusable Workflows & Modular Pipeline
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'day-64/**'
+      - '.github/workflows/day64-*.yml'
+  workflow_dispatch:
+
+jobs:
+  deploy-dev:
+    uses: ./.github/workflows/day64-reusable-ci-template.yml
+    with:
+      target-env: 'dev'
+      service-name: 'payment-api'
+      enable-security-scan: false
+    secrets: inherit
+
+  deploy-prod:
+    needs: deploy-dev
+    uses: ./.github/workflows/day64-reusable-ci-template.yml
+    with:
+      target-env: 'prod'
+      service-name: 'payment-api'
+      enable-security-scan: true
+    secrets: inherit
+
+  verify-reusable-outputs:
+    runs-on: ubuntu-latest
+    needs: [deploy-dev, deploy-prod]
+    steps:
+      - name: Inspect outputs returned from reusable workflows
+        run: |
+          echo "Dev Build Tag: ${{ needs.deploy-dev.outputs.artifact-tag }} | Status: ${{ needs.deploy-dev.outputs.pipeline-result }}"
+          echo "Prod Build Tag: ${{ needs.deploy-prod.outputs.artifact-tag }} | Status: ${{ needs.deploy-prod.outputs.pipeline-result }}"
+          echo "Modular pipeline execution verified 100%!"
