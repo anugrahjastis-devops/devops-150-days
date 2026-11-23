@@ -1,0 +1,66 @@
+name: Day 65 - Environments, Approvals & Concurrency
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'day-65/**'
+      - '.github/workflows/day65-*.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: day65-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  deploy-dev:
+    runs-on: ubuntu-latest
+    environment:
+      name: dev
+    concurrency:
+      group: env-dev-${{ github.ref }}
+      cancel-in-progress: true
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Deploy to Dev Environment
+        run: |
+          echo "Deploying checkout-service to DEV environment..."
+          cat day-65/release-manifest.json
+          echo "DEV deployment completed automatically."
+
+  deploy-staging:
+    needs: deploy-dev
+    runs-on: ubuntu-latest
+    environment:
+      name: staging
+    concurrency:
+      group: env-staging-${{ github.ref }}
+      cancel-in-progress: true
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Deploy to Staging Environment
+        run: |
+          echo "Deploying checkout-service to STAGING environment..."
+          echo "Staging smoke tests passed."
+
+  deploy-prod:
+    needs: deploy-staging
+    runs-on: ubuntu-latest
+    environment:
+      name: prod
+    concurrency:
+      group: env-prod-${{ github.ref }}
+      cancel-in-progress: false
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Deploy to Production Environment
+        run: |
+          echo "Approval granted! Deploying checkout-service to PROD environment..."
+          echo "PROD deployment verified successfully."

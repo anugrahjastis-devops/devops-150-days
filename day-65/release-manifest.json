@@ -1,0 +1,5 @@
+{
+  "service": "checkout-service",
+  "version": "1.65.0",
+  "releaseStrategy": "progressive-env-promotion"
+}
