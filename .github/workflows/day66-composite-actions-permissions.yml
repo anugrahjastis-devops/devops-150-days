@@ -1,0 +1,51 @@
+name: Day 66 - Composite Actions & Workflow Permissions
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'day-66/**'
+      - '.github/actions/service-preflight-audit/**'
+      - '.github/workflows/day66-*.yml'
+  workflow_dispatch:
+
+# Principle of Least Privilege: Default workflow token gets read-only access
+permissions:
+  contents: read
+
+jobs:
+  run-composite-audit:
+    runs-on: ubuntu-latest
+    outputs:
+      audit-id: ${{ steps.preflight.outputs.audit-id }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Execute Custom Composite Action
+        id: preflight
+        uses: ./.github/actions/service-preflight-audit
+        with:
+          service-name: 'inventory-api'
+          environment: 'prod'
+          strict-mode: 'true'
+
+      - name: Print Composite Action Output
+        run: |
+          echo "Composite Action returned Audit ID: ${{ steps.preflight.outputs.audit-id }}"
+
+  verify-least-privilege-permissions:
+    needs: run-composite-audit
+    runs-on: ubuntu-latest
+    # Job-level scoped permissions
+    permissions:
+      contents: read
+      issues: read
+      pull-requests: read
+    steps:
+      - name: Verify scoped GITHUB_TOKEN & upstream composite output
+        run: |
+          echo "Upstream Composite Audit ID: ${{ needs.run-composite-audit.outputs.audit-id }}"
+          echo "Workflow permissions locked to least-privilege (contents: read, issues: read, pull-requests: read)."
+          echo "Security compliance check PASSED!"

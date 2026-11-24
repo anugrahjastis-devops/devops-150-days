@@ -1,0 +1,48 @@
+name: 'Service Preflight & Security Audit'
+description: 'Reusable Composite Action to validate service config and security posture'
+
+inputs:
+  service-name:
+    description: 'Name of the microservice being validated'
+    required: true
+  environment:
+    description: 'Target environment (dev/staging/prod)'
+    required: true
+  strict-mode:
+    description: 'Fail if strict checks are triggered'
+    required: false
+    default: 'true'
+
+outputs:
+  audit-id:
+    description: 'Unique preflight audit identifier'
+    value: ${{ steps.generate-report.outputs.report_id }}
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Validate service inputs & environment
+      shell: bash
+      run: |
+        echo "=== Running Composite Action: Service Preflight Audit ==="
+        echo "Service Name : ${{ inputs.service-name }}"
+        echo "Environment  : ${{ inputs.environment }}"
+        echo "Strict Mode  : ${{ inputs.strict-mode }}"
+
+    - name: Check configuration file existence
+      shell: bash
+      run: |
+        if [ ! -f "day-66/service-config.yaml" ]; then
+          echo "ERROR: day-66/service-config.yaml missing!"
+          exit 1
+        fi
+        echo "Configuration file verified successfully."
+        cat day-66/service-config.yaml
+
+    - name: Generate audit report ID
+      id: generate-report
+      shell: bash
+      run: |
+        REPORT_ID="AUDIT-${{ inputs.service-name }}-${{ inputs.environment }}-$(date +%Y%m%d)"
+        echo "Generated Audit ID: $REPORT_ID"
+        echo "report_id=$REPORT_ID" >> $GITHUB_OUTPUT

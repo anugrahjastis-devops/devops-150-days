@@ -1,0 +1,11 @@
+name: 'Custom Docker Action Example'
+description: 'Demonstrates using: docker custom action architecture'
+inputs:
+  service-name:
+    description: 'Service name'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.service-name }}

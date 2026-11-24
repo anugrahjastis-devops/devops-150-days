@@ -1,0 +1,4 @@
+service: inventory-api
+owner: platform-devops-team
+port: 8080
+leastPrivilegeEnabled: true
