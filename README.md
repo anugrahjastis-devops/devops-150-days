@@ -419,4 +419,5 @@ Day 28 covers persistent data storage mechanisms in Dockerized environments usin
 - **Day 66:** Custom Composite Actions, Custom Actions & Workflow Permissions – Built a reusable `composite` action (`action.yml`) with inputs/outputs, documented Docker/JS custom action types, and enforced least-privilege `GITHUB_TOKEN` `permissions`.
 
 - **Day 67:** Jenkins Setup (Dockerized Jenkins), Architecture, Plugins & Credentials – Deployed a persistent Dockerized Jenkins Controller (`jenkins/jenkins:lts-jdk17`), installed Jenkins plugins (`Credentials`), and configured encrypted global credentials (`github-ci-token`).
+
 - **Day 68:** Jenkins Pipelines (`Jenkinsfile`), Declarative Syntax & Credentials Binding – Built a multi-stage Declarative `Jenkinsfile`, bound `github-ci-token` via `withCredentials`, and verified pipeline execution in Jenkins.
