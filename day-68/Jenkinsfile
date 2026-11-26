@@ -1,0 +1,53 @@
+pipeline {
+    agent any
+
+    environment {
+        PROJECT_NAME = 'devops-150-days-day68'
+    }
+
+    stages {
+        stage('Environment & Workspace Check') {
+            steps {
+                sh '''
+                    echo "Running Day 68 Pipeline for ${PROJECT_NAME}"
+                    pwd
+                    uname -a
+                '''
+            }
+        }
+
+        stage('Credentials Binding Verification') {
+            steps {
+                withCredentials([usernamePassword(
+                    credentialsId: 'github-ci-token',
+                    usernameVariable: 'GH_USER',
+                    passwordVariable: 'GH_TOKEN'
+                )]) {
+                    sh '''
+                        echo "Bound GitHub user: $GH_USER"
+                        echo "Token length check (masked in logs): ${#GH_TOKEN}"
+                    '''
+                }
+            }
+        }
+
+        stage('Build & Artifact Simulation') {
+            steps {
+                sh '''
+                    mkdir -p build-output
+                    echo "Day 68 CI Pipeline executed cleanly at $(date -u)" > build-output/report.txt
+                    ls -la build-output
+                '''
+            }
+        }
+    }
+
+    post {
+        success {
+            echo "SUCCESS: Day 68 Declarative Pipeline passed!"
+        }
+        failure {
+            echo "FAILURE: Check stage logs for details."
+        }
+    }
+}
