@@ -421,3 +421,5 @@ Day 28 covers persistent data storage mechanisms in Dockerized environments usin
 - **Day 67:** Jenkins Setup (Dockerized Jenkins), Architecture, Plugins & Credentials – Deployed a persistent Dockerized Jenkins Controller (`jenkins/jenkins:lts-jdk17`), installed Jenkins plugins (`Credentials`), and configured encrypted global credentials (`github-ci-token`).
 
 - **Day 68:** Jenkins Pipelines (`Jenkinsfile`), Declarative Syntax & Credentials Binding – Built a multi-stage Declarative `Jenkinsfile`, bound `github-ci-token` via `withCredentials`, and verified pipeline execution in Jenkins.
+
+- **Day 69:** Pipeline Script from SCM (GitHub), Parameterized Builds & Poll SCM Triggers - Connected Jenkins to `day-69/Jenkinsfile` via SCM with runtime parameters (`DEPLOY_ENV`, `APP_VERSION`, `RUN_SECURITY_SCAN`), conditional `when` stages, and `pollSCM` triggers
