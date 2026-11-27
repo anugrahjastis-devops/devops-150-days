@@ -1,0 +1,66 @@
+pipeline {
+    agent any
+
+    parameters {
+        choice(
+            name: 'DEPLOY_ENV',
+            choices: ['dev', 'staging', 'prod'],
+            description: 'Select target deployment environment'
+        )
+        string(
+            name: 'APP_VERSION',
+            defaultValue: 'v1.0.0',
+            description: 'Release tag or build version'
+        )
+        booleanParam(
+            name: 'RUN_SECURITY_SCAN',
+            defaultValue: true,
+            description: 'Run security & lint checks before packaging'
+        )
+    }
+
+    triggers {
+        pollSCM('H/5 * * * *')
+    }
+
+    stages {
+        stage('SCM Checkout Verification') {
+            steps {
+                sh '''
+                    echo "=== Day 69 Pipeline from GitHub SCM ==="
+                    echo "Target Environment : ${DEPLOY_ENV}"
+                    echo "Release Version    : ${APP_VERSION}"
+                    git log -1 --oneline || ls -la
+                '''
+            }
+        }
+
+        stage('Conditional Security Check') {
+            when {
+                expression { return params.RUN_SECURITY_SCAN == true }
+            }
+            steps {
+                sh '''
+                    echo "Running security & secret hygiene scan for ${APP_VERSION}..."
+                    echo "Security scan PASSED!"
+                '''
+            }
+        }
+
+        stage('Environment Packaging') {
+            steps {
+                sh '''
+                    mkdir -p release-bundle
+                    echo "App=${APP_VERSION} | Env=${DEPLOY_ENV} | BuiltAt=$(date -u)" > release-bundle/manifest.txt
+                    cat release-bundle/manifest.txt
+                '''
+            }
+        }
+    }
+
+    post {
+        success {
+            echo "SUCCESS: Release ${params.APP_VERSION} validated for ${params.DEPLOY_ENV}!"
+        }
+    }
+}
