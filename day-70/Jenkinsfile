@@ -1,0 +1,71 @@
+pipeline {
+    agent any
+
+    environment {
+        DOCKERHUB_USER = 'anugrahjastis'
+        IMAGE_NAME     = 'devops-150-days-api'
+        IMAGE_TAG      = "v1.0.${BUILD_NUMBER}"
+        FULL_IMAGE     = "${DOCKERHUB_USER}/${IMAGE_NAME}:${IMAGE_TAG}"
+        LATEST_IMAGE   = "${DOCKERHUB_USER}/${IMAGE_NAME}:latest"
+    }
+
+    stages {
+        stage('Checkout SCM') {
+            steps {
+                sh '''
+                    echo "=== Day 70: Jenkins Docker CI Pipeline ==="
+                    git log -1 --oneline
+                '''
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                dir('day-70') {
+                    sh '''
+                        echo "Building Docker image: ${FULL_IMAGE}"
+                        docker build -t ${FULL_IMAGE} -t${LATEST_IMAGE} .
+                        docker images | grep ${IMAGE_NAME}
+                    '''
+                }
+            }
+        }
+
+        stage('Verify Container Smoke Test') {
+            steps {
+                sh '''
+                    docker run -d --name test-api-${BUILD_NUMBER} -e APP_VERSION=${IMAGE_TAG}${FULL_IMAGE}
+                    sleep 3
+                    docker exec test-api-${BUILD_NUMBER} python -c "import urllib.request; print(urllib.request.urlopen('http://localhost:5000/health').read().decode())"
+                    docker rm -f test-api-${BUILD_NUMBER}
+                '''
+            }
+        }
+
+        stage('Push Image to Docker Hub') {
+            steps {
+                withCredentials([usernamePassword(
+                    credentialsId: 'dockerhub-creds',
+                    usernameVariable: 'DOCKER_USER',
+                    passwordVariable: 'DOCKER_PASS'
+                )]) {
+                    sh '''
+                        echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin
+                        docker push ${FULL_IMAGE}
+                        docker push ${LATEST_IMAGE}
+                        docker logout
+                    '''
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            sh 'docker image prune -f || true'
+        }
+        success {
+            echo "SUCCESS: Image ${FULL_IMAGE} built, verified, and pushed to Docker Hub!"
+        }
+    }
+}
