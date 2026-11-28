@@ -24,7 +24,7 @@ pipeline {
                 dir('day-70') {
                     sh '''
                         echo "Building Docker image: ${FULL_IMAGE}"
-                        docker build -t ${FULL_IMAGE} -t${LATEST_IMAGE} .
+                        docker build -t ${FULL_IMAGE} -t ${LATEST_IMAGE} .
                         docker images | grep ${IMAGE_NAME}
                     '''
                 }
@@ -34,7 +34,8 @@ pipeline {
         stage('Verify Container Smoke Test') {
             steps {
                 sh '''
-                    docker run -d --name test-api-${BUILD_NUMBER} -e APP_VERSION=${IMAGE_TAG}${FULL_IMAGE}
+                    docker rm -f test-api-${BUILD_NUMBER} || true
+                    docker run -d --name test-api-${BUILD_NUMBER} -e APP_VERSION=${IMAGE_TAG} ${FULL_IMAGE}
                     sleep 3
                     docker exec test-api-${BUILD_NUMBER} python -c "import urllib.request; print(urllib.request.urlopen('http://localhost:5000/health').read().decode())"
                     docker rm -f test-api-${BUILD_NUMBER}
