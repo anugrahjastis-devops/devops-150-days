@@ -423,3 +423,5 @@ Day 28 covers persistent data storage mechanisms in Dockerized environments usin
 - **Day 68:** Jenkins Pipelines (`Jenkinsfile`), Declarative Syntax & Credentials Binding – Built a multi-stage Declarative `Jenkinsfile`, bound `github-ci-token` via `withCredentials`, and verified pipeline execution in Jenkins.
 
 - **Day 69:** Pipeline Script from SCM (GitHub), Parameterized Builds & Poll SCM Triggers - Connected Jenkins to `day-69/Jenkinsfile` via SCM with runtime parameters (`DEPLOY_ENV`, `APP_VERSION`, `RUN_SECURITY_SCAN`), conditional `when` stages, and `pollSCM` triggers
+
+- **Day 70:** Jenkins CI Pipeline — Build, Smoke Test & Push Docker Image to Docker Hub - Integrated Docker socket with `jenkins-controller`, bound `dockerhub-creds` securely, and automated building, smoke-testing, and pushing `v1.0.<BUILD_NUMBER>` and `latest` images (`anugrahjastis/devops-150-days-api`) via `day-70/Jenkinsfile`
